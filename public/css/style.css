@@ -1,7 +1,8 @@
 
 button{
     background-color: rgb(43, 221, 162);
-
+    border: ;
+    border-color: rgb(25, 189, 189);
 }
 body{
     background-color: rgb(231, 240, 235);
@@ -15,4 +16,21 @@ body{
 h1{
     text-align: center;
 }
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+tr:hover {
+    background-color: #f5f5f5
+}
+th {
+    background-color: rgb(43, 221, 162);
+    color: rgb(34, 8, 8);
+   
+}
+
+
+
+
 

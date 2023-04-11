@@ -17,7 +17,8 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 //ADICIONANDO CSSS
-app.use(express.static('public'));
+app.use(express.static('public'))
+app.use(express.static('public/logo.png'))
 
 
 //CRIANDO ROTAS: -----------------------------------------------------------------------

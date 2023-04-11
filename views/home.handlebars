@@ -1,8 +1,9 @@
+<img src="../public/logo.png" width="300">
 <h1>CADASTRO DE VEÍCULOS</h1><br>
 
- <a href="/cadastro"><button>Adicionar</button></a>
+
 <hr>
-<table>
+<table >
   <thead>
     <tr>
       <th>ID</th>
@@ -10,8 +11,11 @@
       <th>Ano</th>
       <th>Ações</th>
     </tr>
-  </thead>
+    
   <tbody>
+    
+  </thead>
+
     {{#each veiculos}}
       <tr>
         <td>{{this.id}}</td>
@@ -22,68 +26,10 @@
           <a href="/deletar/{{this.id}}"><button>Deletar</button></a>
         </td>
       </tr>
+      
     {{/each}}
   </tbody>
-</table>
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Modelo</th>
-      <th scope="col">Ano</th>
-      <th scope="col">Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Primeiro</th>
-      <th scope="col">Último</th>
-      <th scope="col">Nickname</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
+    <td>
+         <a href="/cadastro"><button>Adicionar</button></a>
+        </td>
 </table>
