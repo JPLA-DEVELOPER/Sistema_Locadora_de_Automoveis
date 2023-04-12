@@ -23,15 +23,15 @@ app.use(express.static('public'))
 
 
 //PARTIALS - PERMITEM REUTILIZAR COMPONENTES
-//const hbs = exphbs.create({
- //   partialsDir: ["views/partials"]
-//})
-hbs.registerPartials(__dirname + '/views/partials')
+const hbs = partials.create({
+   partialsDir: ["views/partials"]
+})
+//hbs.registerPartials(__dirname + '/views/partials')
 
 //ROTA PALTIALS
-app.get('/', (req, res, next) => {
-    res.render('veiculos') ///renderiza o arquivo partials
-  })
+//app.get('/', (req, res, next) => {
+ //   res.render('patialsveiculos') ///renderiza o arquivo partials
+ // })
 
 
 //ADICIONANDO AS ROTAS CRIADAS NA PASTA ROUTER:----------------------------------------
