@@ -8,8 +8,10 @@ const Veiculos = require('../models/cadastro');
 router.get('/', function(req, res){
     Veiculos.findAll().then(function(veiculos){ //puxa todos os dados na tabela do bd.
          //console.log(veiculos)
+         patialsveiculos.push(patialsveiculos)//<!--Partials-->
+         
          res.render('home', {veiculos: veiculos})
-         veiculos.push(veiculos)//<!--Partials-->
+        
      }) 
  })
  
