@@ -2,6 +2,7 @@ const express = require('express')//importando o módulo express
 const app = express();
 const handlebars = require('express-handlebars')//instala o handlebars
 const bodyParser = require('body-parser')
+const partials = require('express-handlebars') //importa o partials
 const Veiculos = require('./routes/rotasVeiculos')//importa o arquivo de rotas
 
 
@@ -19,10 +20,18 @@ app.use(bodyParser.json())
 //ADICIONANDO CSSS
 app.use(express.static('public'))
 
+
+
 //PARTIALS - PERMITEM REUTILIZAR COMPONENTES
-const hbs = exphbs.create({
-    partialsDir: ["views/partials"]
-})
+//const hbs = exphbs.create({
+ //   partialsDir: ["views/partials"]
+//})
+hbs.registerPartials(__dirname + '/views/partials')
+
+//ROTA PALTIALS
+app.get('/', (req, res, next) => {
+    res.render('veiculos') ///renderiza o arquivo partials
+  })
 
 
 //ADICIONANDO AS ROTAS CRIADAS NA PASTA ROUTER:----------------------------------------

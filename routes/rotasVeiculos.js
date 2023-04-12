@@ -9,7 +9,7 @@ router.get('/', function(req, res){
     Veiculos.findAll().then(function(veiculos){ //puxa todos os dados na tabela do bd.
          //console.log(veiculos)
          res.render('home', {veiculos: veiculos})
-         veiculos.push(veiculo)//<!--Partials-->
+         veiculos.push(veiculos)//<!--Partials-->
      }) 
  })
  
