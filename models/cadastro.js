@@ -2,6 +2,11 @@ const Sequelize = require('sequelize')
 const sequelize = require('./db').sequelize
 
 const Veiculos = sequelize.define('veiculos', {
+    
+    proprietario: {
+        type: Sequelize.STRING
+    },
+    
     modelo: {
         type: Sequelize.STRING
     },

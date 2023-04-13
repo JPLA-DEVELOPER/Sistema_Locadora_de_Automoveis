@@ -3,6 +3,7 @@
   <thead>
     <tr>
       <th>ID</th>
+      <th>Proprietário</th>
       <th>Modelo</th>
       <th>Ano</th>
       <th>Fabricante</th>
@@ -19,14 +20,16 @@
     {{#each veiculos}}
       <tr>
         <td>{{this.id}}</td>
+        <td>{{this.proprietario}}</td>
         <td>{{this.modelo}}</td>
         <td>{{this.ano}}</td>
         <td>{{this.fabricante}}</td>
         <td>{{this.placa}}</td>
         <td>{{this.renavam}}</td>
+        
         <td>
           <a href="/editar/{{this.id}}"><button><img src="/editar.png" width="15"> Editar</button></a>
-          <a href="/deletar/{{this.id}}"><button><img src="/deletar.png" width="15"> Deletar</button></a>
+          <a href="/deletar/{{this.id}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar</button></a>
         </td>
       </tr>
       

@@ -6,6 +6,10 @@ button{
     text-align: center;
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
+}
+    #btn_deletar{
+        background-color:rgb(230, 98, 98);
+    }
    
 }
 body{

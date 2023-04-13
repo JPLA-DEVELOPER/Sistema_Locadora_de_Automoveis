@@ -37,8 +37,12 @@ router.get('/deletar/:id', function(req, res){
  
  router.post('/editar/:id', function(req, res){ //SALVA NO BD
      Veiculos.update({
-         modelo: req.body.modelo,
-         ano: req.body.ano
+        proprietario: req.body.proprietario,
+        modelo:  req.body.modelo,
+        ano: req.body.ano,  //pega o dado fornecido no campo do formulario html de nome modelo(BodyParser).
+        fabricante: req.body.fabricante,
+        placa: req.body.placa,
+        renavam: req.body.renavam
      }, {
          where: { id: req.params.id }
      }).then(function(){
@@ -62,6 +66,7 @@ router.get('/deletar/:id', function(req, res){
  //CRIA ROTA POST COM OS DADOS DO FORMULÁRIO
  router.post('/cadastro', function(req, res){//Recebe os dados do formulario
      Veiculos.create({
+         proprietario: req.body.proprietario,
          modelo:  req.body.modelo,
          ano: req.body.ano,  //pega o dado fornecido no campo do formulario html de nome modelo(BodyParser).
          fabricante: req.body.fabricante,
