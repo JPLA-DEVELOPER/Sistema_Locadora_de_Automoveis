@@ -6,10 +6,7 @@ const Veiculos = require('../models/cadastro');
 //Rota principal
 
 router.get('/', function(req, res){
-    Veiculos.findAll().then(function(veiculos){ //puxa todos os dados na tabela do bd.
-         //console.log(veiculos)
-         patialsveiculos.push(patialsveiculos)//<!--Partials-->
-         
+    Veiculos.findAll().then(function(veiculos){ //puxa todos os dados na tabela do bd
          res.render('home', {veiculos: veiculos})
         
      }) 
@@ -28,8 +25,8 @@ router.get('/deletar/:id', function(req, res){
  })
  
  
- // ROTA PARA EDITAR UM REGISTRO DA TABELA
- router.get('/editar/:id', function(req, res){
+ // ROTAS PARA EDITAR UM REGISTRO DA TABELA (GET E POST)
+ router.get('/editar/:id', function(req, res){//PEGA OS DADOS DO FORMULÁRIO
      Veiculos.findByPk(req.params.id).then(function(veiculo){ //encontra o registro correspondente ao id passado na URL
          res.render('editar', {veiculo: veiculo}) //renderiza a página de edição com as informações do veículo
      }).catch(function(erro){
@@ -37,8 +34,8 @@ router.get('/deletar/:id', function(req, res){
      })
  })
  
- // ROTA PARA ATUALIZAR UM REGISTRO DA TABELA
- router.post('/editar/:id', function(req, res){
+ 
+ router.post('/editar/:id', function(req, res){ //SALVA NO BD
      Veiculos.update({
          modelo: req.body.modelo,
          ano: req.body.ano
@@ -63,11 +60,13 @@ router.get('/deletar/:id', function(req, res){
  })
  
  //CRIA ROTA POST COM OS DADOS DO FORMULÁRIO
- router.post('/dados', function(req, res){//Recebe os dados do formulario
+ router.post('/cadastro', function(req, res){//Recebe os dados do formulario
      Veiculos.create({
          modelo:  req.body.modelo,
-         ano: req.body.ano  //pega o dado fornecido no campo do formulario html de nome modelo(BodyParser).
-     
+         ano: req.body.ano,  //pega o dado fornecido no campo do formulario html de nome modelo(BodyParser).
+         fabricante: req.body.fabricante,
+         placa: req.body.placa,
+         renavam: req.body.renavam
      }).then(function(){
      //res.send("veículo cadastrado com sucesso!")
      res.render('sucesso_cadastro') //renderiza a pagina

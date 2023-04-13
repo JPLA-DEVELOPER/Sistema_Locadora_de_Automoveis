@@ -7,6 +7,15 @@ const Veiculos = sequelize.define('veiculos', {
     },
     ano: {
         type: Sequelize.INTEGER
+    },
+    fabricante: {
+        type: Sequelize.STRING
+    },
+    placa: {
+        type: Sequelize.STRING
+    },
+    renavam: {
+        type: Sequelize.STRING
     }
 })
 

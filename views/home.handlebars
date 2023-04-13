@@ -1,15 +1,15 @@
-<img src="../public/logo.png" width="300">
-<h1>CADASTRO DE VEÍCULOS</h1><br>
 
-
-<hr>
 <table >
   <thead>
     <tr>
       <th>ID</th>
       <th>Modelo</th>
       <th>Ano</th>
+      <th>Fabricante</th>
+      <th>Placa</th>
+      <th>Renavam</th>
       <th>Ações</th>
+
     </tr>
     
   <tbody>
@@ -18,20 +18,22 @@
 
     {{#each veiculos}}
       <tr>
-        <td>{{> patialsveiculos}}</td>
         <td>{{this.id}}</td>
         <td>{{this.modelo}}</td>
         <td>{{this.ano}}</td>
+        <td>{{this.fabricante}}</td>
+        <td>{{this.placa}}</td>
+        <td>{{this.renavam}}</td>
         <td>
-          <a href="/editar/{{this.id}}"><button>Editar</button></a>
-          <a href="/deletar/{{this.id}}"><button>Deletar</button></a>
+          <a href="/editar/{{this.id}}"><button><img src="/editar.png" width="15"> Editar</button></a>
+          <a href="/deletar/{{this.id}}"><button><img src="/deletar.png" width="15"> Deletar</button></a>
         </td>
       </tr>
       
     {{/each}}
   </tbody>
     <td>
-         <a href="/cadastro"><button>Adicionar</button></a>
+         <a href="/cadastro"><button> <img src="/adicionar.png" width="15"> Adicionar</button></a>
         </td>
 </table>
 

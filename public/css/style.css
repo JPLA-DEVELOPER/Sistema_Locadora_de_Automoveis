@@ -1,8 +1,12 @@
 
 button{
     background-color: rgb(43, 221, 162);
-    border: ;
-    border-color: rgb(25, 189, 189);
+    border: none;
+    border-radius: 10%;
+    text-align: center;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+   
 }
 body{
     background-color: rgb(231, 240, 235);
@@ -15,6 +19,15 @@ body{
 }
 h1{
     text-align: center;
+
+}
+h2{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 th, td {
@@ -33,4 +46,57 @@ th {
 
 
 
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(43, 221, 162);
+    padding: 20px 20px;
+  }
+  nav {
+    
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+  }
 
+  footer {
+    
+    align-items: center;
+    background-color: rgb(43, 221, 162);
+    padding: 20px 20px;
+  }
+    
+    
+
+
+  
+
+
+
+  form {
+    /* Apenas para centralizar o form na página */
+    margin: 0 auto;
+    width: 400px;
+    /* Para ver as bordas do formulário */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+
+
+label {
+    /*Para ter certeza que todas as labels tem o mesmo tamanho e estão propriamente alinhadas */
+    display: inline-flexbox;
+    width: 90px;
+    text-align: right;
+}
+
+table{
+    
+    text-align: center;
+    align-items: center;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}

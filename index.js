@@ -7,6 +7,10 @@ const Veiculos = require('./routes/rotasVeiculos')//importa o arquivo de rotas
 
 
 
+//PARTIALS - PERMITEM REUTILIZAR COMPONENTES
+const hbs = partials.create({
+   partialsDir: ["views/partials"]
+})
 
 //TEMPLATE ENGINE
 app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}))
@@ -22,10 +26,9 @@ app.use(express.static('public'))
 
 
 
-//PARTIALS - PERMITEM REUTILIZAR COMPONENTES
-const hbs = partials.create({
-   partialsDir: ["views/partials"]
-})
+
+
+
 //hbs.registerPartials(__dirname + '/views/partials')
 
 //ROTA PALTIALS

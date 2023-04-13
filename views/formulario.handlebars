@@ -2,14 +2,25 @@
 <!-- metodo GET: envia esses dados pela url, o POST não-->
  
 <h1>Adicionar Veículo</h1>
-<form action="/dados" method="post">
+<form action="/cadastro" method="post">
   <div>
-    <h1> {{> patialsveiculos}}</h1> <!--ADICIONA O PARTIALS PARTIALVEICULOS A PÁGINA DE CADASTRO-->
     <label>Modelo:</label>
     <input type="text" name="modelo" placeholder="Digite o modelo">
+
     <label>Ano:</label>
     <input type="text" name="ano" placeholder="Digite o ano">
-    <input id="cadastrar" type="submit" value="Cadastrar" />
+    
+    <label>Fabricante:</label>
+    <input type="text" name="fabricante" placeholder="Digite o fabricante">
+
+    <label>Placa:</label>
+    <input type="text" name="placa" placeholder="Digite a placa">
+
+    <label>Renavam:</label>
+    <input type="text" name="renavam" placeholder="Digite o renavam">
+
+    <button> <img src="/salvar.png" width="15"> Salvar</button>
   </div>
 </form>
-<a href="/dados ">Voltar</a>
+
+<a href="/"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
