@@ -3,41 +3,40 @@
  
 <h1>Editar Veículo</h1>
 <form name="formularioeditar" action="/editar/{{veiculo.id}}" method="post">
-  <div>
+ <div>
     <div>
     <label>Proprietário:</label>
-    <input type="text" name="proprietario"  placeholder="Digite o propritário">
+    <input type="text" name="proprietario"  value="{{ veiculo.proprietario }}">
   </div>
 
 <div>
     <label>Modelo:</label>
-    <input type="text" name="modelo" placeholder="Digite o modelo">
+    <input type="text" name="modelo" value="{{ veiculo.modelo }}">
 </div>
 
 <div>
     <label>Ano:</label>
-    <input type="text" name="ano" placeholder="Digite o ano">
+    <input type="text" name="ano" value="{{ veiculo.ano }}">
 </div>  
 <div>
     <label>Fabricante:</label>
-    <input type="text" name="fabricante" placeholder="Digite o fabricante">
+    <input type="text" name="fabricante" value="{{ veiculo.fabricante }}">
 </div>
 <div>
     <label>Placa:</label>
-    <input type="text" name="placa" placeholder="Digite a placa">
+    <input type="text" name="placa" value="{{ veiculo.placa }}">
 </div>
 <div>
     <label>Renavam:</label>
-    <input type="text" name="renavam" placeholder="Digite o renavam">
+    <input type="text" name="renavam" value="{{ veiculo.renavam }}">
 </div>   
-
-    <button> <img src="/salvar.png" width="15"> Salvar</button>
-
-    
+ <br>
+ <div class="btn-salvar">
+      <button > <img src="/salvar.png" width="15"> Salvar</button>
+    </div>
+   
   </div>
 </form>
 
-
-
- <a href="/"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
-
+ 
+<a href="/"><button> <img src="/voltar.png" width="15"> Voltar</button></a>

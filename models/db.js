@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('veiculos', 'root', '1234', { //nome do banco, usuário e senha.
+const sequelize = new Sequelize('veiculos', 'root', '', { //nome do banco, usuário e senha.
     host: "localhost", //maquina onde está rodando o mysql(localhost)
     dialect:'mysql', //Tipo de banco que está conectado.
     query:{raw:true}
