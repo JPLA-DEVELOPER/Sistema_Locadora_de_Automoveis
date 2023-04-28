@@ -1,53 +1,42 @@
-const express = require('express')//importando o módulo express
-const app = express();
-const handlebars = require('express-handlebars')//instala o handlebars
+const express = require('express')
+const app = express()
+const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
-const partials = require('express-handlebars') //importa o partials
-const Veiculos = require('./routes/rotasVeiculos')//importa o arquivo de rotas
+const sequelize = require('./database/connection')
 
+// Importando rotas
+const veiculoRotas = require('./routes/veiculoRotas');
 
-
-//PARTIALS - PERMITEM REUTILIZAR COMPONENTES
-const hbs = partials.create({
-   partialsDir: ["views/partials"]
-})
+// Configurando Handlebars como template engine
+//app.engine('handlebars', handlebars({
+ //   defaultLayout: 'main',
+ //   runtimeOptions: {
+ //       allowProtoPropertiesByDefault: true,
+ //       allowProtoMethodsByDefault: true,
+ //   },
+//}));
+//app.set('view engine', 'handlebars');
 
 //TEMPLATE ENGINE
 app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars') 
 
-//BODY PARSER----------------------------------------------------------------------
-//recebe dados de qualquer formulário.
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
 
-//ADICIONANDO CSSS
-app.use(express.static('public'))
+// Configurando Body Parser para receber dados de formulário
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
+// Configurando pasta public para servir arquivos estáticos
+app.use(express.static('public'));
 
+// Configurando rotas
+app.use('/', veiculoRotas);
 
-
-
-
-//hbs.registerPartials(__dirname + '/views/partials')
-
-//ROTA PALTIALS
-//app.get('/', (req, res, next) => {
- //   res.render('patialsveiculos') ///renderiza o arquivo partials
- // })
-
-
-//ADICIONANDO AS ROTAS CRIADAS NA PASTA ROUTER:----------------------------------------
-app.use('/', Veiculos)
-app.use('/cadastro', Veiculos)
-app.use('/deletar/:id', Veiculos)
-app.use('/editar/:id', Veiculos)
-app.use('/dados', Veiculos)
-
-
-
-
-//PORTA DO SERVIDOR
-app.listen(3000, function(){
-    console.log("Servidor rodando na URL http://localhost:3000")
-})
+// Sincronizando com o banco de dados e iniciando servidor
+sequelize.sync().then(() => {
+    app.listen(3000, () => {
+        console.log("Servidor rodando na URL http://localhost:3000");
+    });
+}).catch(err => {
+    console.log(err);
+});
