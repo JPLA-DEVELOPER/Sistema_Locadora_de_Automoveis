@@ -1,13 +1,24 @@
 const express = require('express');
 const router = express.Router();
-const veiculoController = require('../controllers/veiculoController');
 
-router.get('/', veiculoController.getAll);
-router.get('/:id', veiculoController.getOne);
-router.post('/', veiculoController.create);
-router.put('/:id', veiculoController.update);
-router.delete('/:id', veiculoController.delete);
+const VeiculoController = require('../controllers/veiculoController');
 
 
+//LISTAR TODOS OS VEICULOS CADASTRADOS
+router.get('/', VeiculoController.allVeiculos)
+
+
+//ADICIONAR VEÍCULO
+router.get('/cadastro/veiculo', VeiculoController.newVeiculo)
+router.post('/cadastro/veiculo', VeiculoController.newVeiculoSave)
+
+//ATUALIZAR VEICULO
+router.get('/editar/veiculo/:id', VeiculoController.updateVeiculo)
+router.post('/editar/veiculo/:id', VeiculoController.updateVeiculoSave)
+
+
+//EXCLUIR VEÍCULOS
+router.get('/excluir/veiculo/:id', VeiculoController.removeVeiculo)
+router.post('/excluir/veiculo/:id', VeiculoController.removeVeiculo)
 
 module.exports = router;

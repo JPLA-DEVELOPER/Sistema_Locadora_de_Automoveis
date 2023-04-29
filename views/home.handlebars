@@ -1,15 +1,15 @@
-
+<h2> VEÍCULOS </h2>
 <table >
   <thead>
     <tr>
       <th>ID</th>
-      <th>Proprietário</th>
+      <th>Marca</th>
       <th>Modelo</th>
       <th>Ano</th>
-      <th>Fabricante</th>
-      <th>Placa</th>
-      <th>Renavam</th>
+      <th>Cor</th>
+      <th>Preço</th>
       <th>Ações</th>
+      
 
     
     
@@ -20,23 +20,64 @@
     {{#each veiculos}}
       <tr>
         <td>{{this.id}}</td>
-        <td>{{this.proprietario}}</td>
+        <td>{{this.marca}}</td>
         <td>{{this.modelo}}</td>
         <td>{{this.ano}}</td>
-        <td>{{this.fabricante}}</td>
-        <td>{{this.placa}}</td>
-        <td>{{this.renavam}}</td>
+        <td>{{this.cor}}</td>
+        <td>{{this.preco}}</td>
+        
         
         <td>
-          <a href="/veiculo/editar/{{this.id}}"><button><img src="/editar.png" width="15"> Editar</button></a>
-          <a href="/deletar/{{this.id}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar</button></a>
+          <a href="/editar/veiculo/{{this.id}}"><button><img src="/editar.png" width="15"> Editar</button></a>
+          <a href="/excluir/veiculo/{{this.id}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar</button></a>
         </td>
       </tr>
       
     {{/each}}
   </tbody>
     <td>
-         <a href="/veiculos/novo"><button> <img src="/adicionar.png" width="15"> AAdicionar</button></a>
+         <a href="/cadastro/veiculo"><button> <img src="/adicionar.png" width="15"> Adicionar Veículo</button></a>
         </td>
 </table>
 
+<hr>
+
+<h2> USUÁRIOS </h2>
+
+<table >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Senha</th>
+      <th>Ações</th>
+      
+
+    
+    </tr>
+  <tbody>
+    
+  </thead>
+
+    {{#each usuario}}
+      <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.nome}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.senha}}</td>
+        
+        
+        
+        <td>
+          <a href="/editar/veiculo/{{this.id}}"><button><img src="/editar.png" width="15"> Editar</button></a>
+          <a href="/excluir/veiculo/{{this.id}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar</button></a>
+        </td>
+      </tr>
+      
+    {{/each}}
+  </tbody>
+    <td>
+         <a href="/cadastro/usuario"><button> <img src="/adicionar.png" width="15"> Adicionar Usuário</button></a>
+        </td>
+</table>

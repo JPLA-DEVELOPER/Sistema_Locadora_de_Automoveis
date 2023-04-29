@@ -6,16 +6,9 @@ const sequelize = require('./database/connection')
 
 // Importando rotas
 const veiculoRotas = require('./routes/veiculoRotas');
+const usuarioRotas = require('./routes/usuarioRotas');
 
-// Configurando Handlebars como template engine
-//app.engine('handlebars', handlebars({
- //   defaultLayout: 'main',
- //   runtimeOptions: {
- //       allowProtoPropertiesByDefault: true,
- //       allowProtoMethodsByDefault: true,
- //   },
-//}));
-//app.set('view engine', 'handlebars');
+
 
 //TEMPLATE ENGINE
 app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}))
@@ -30,7 +23,8 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // Configurando rotas
-app.use('/', veiculoRotas);
+app.use('/', veiculoRotas)
+app.use('/', usuarioRotas)
 
 // Sincronizando com o banco de dados e iniciando servidor
 sequelize.sync().then(() => {
