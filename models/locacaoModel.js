@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/connection');
-
 const Cliente = require('./clienteModel');
 const Veiculo = require('./veiculoModel');
 
@@ -11,35 +10,28 @@ const Locacao = sequelize.define('Locacao', {
     allowNull: false,
     primaryKey: true
   },
-  nome: {
-    type: DataTypes.STRING,
+  dataInicio: {
+    type: DataTypes.DATEONLY,
     allowNull: false
   },
-  cpf: {
-    type: DataTypes.STRING,
+  dataFim: {
+    type: DataTypes.DATEONLY,
     allowNull: false
   },
-  marca: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  modelo: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  ano: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
-  valordiaria: {
-    type: DataTypes.INTEGER,
+  valorTotal: {
+    type: DataTypes.DECIMAL,
     allowNull: false
   }
-
-  
 });
 
+// definir o relacionamento entre Alocacao, Cliente e Veiculo
 Locacao.belongsTo(Cliente, { foreignKey: 'idCliente' });
 Locacao.belongsTo(Veiculo, { foreignKey: 'idVeiculo' });
+
+// definir o relacionamento inverso entre Cliente e Alocacao
+Cliente.hasMany(Locacao, { foreignKey: 'idCliente' });
+
+// definir o relacionamento inverso entre Veiculo e Alocacao
+Veiculo.hasMany(Locacao, { foreignKey: 'idVeiculo' });
 
 module.exports = Locacao;

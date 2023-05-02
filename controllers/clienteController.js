@@ -36,6 +36,8 @@ module.exports = class ClienteController {
   static async allCliente(req, res) {//allUsers, recupera todos os usuários do banco de dados usando o modelo User e os renderiza em uma view.
     const cliente = await Cliente.findAll({ raw: true })
     res.render('viewClientes', { cliente })
+    
+    
   }
 
 
@@ -70,6 +72,10 @@ module.exports = class ClienteController {
         console.log(err)
       })
   }
+
+ 
+
+ 
 
 
 }
