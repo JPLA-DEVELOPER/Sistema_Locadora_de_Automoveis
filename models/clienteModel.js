@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../database/connection');
 
 const Cliente = sequelize.define('Cliente', {
-  id: {
+  idCliente: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     allowNull: false,
@@ -21,7 +21,7 @@ const Cliente = sequelize.define('Cliente', {
     allowNull: false
   },
   telefone:{
-    type: DataTypes.INTEGER
+    type: DataTypes.STRING
   },
   endereco: {
     type: DataTypes.STRING,

@@ -5,13 +5,15 @@
 <table >
   <thead>
     <tr>
-      <th>ID</th>
+      <th>ID Locação</th>
       <th>Nome</th>
       <th>CPF</th>
       <th>Marca</th>
       <th>Modelo</th>
       <th>Ano</th>
       <th>Valor Diária</th>
+      <th>ClienteID</th>
+      <th>VeiculoID</th>
       <th>Ações</th>
       
 
@@ -23,19 +25,21 @@
 
     {{#each locacao}}
       <tr>
-        <td>{{this.id}}</td>
+        <td>{{this.idLocacao}}</td>
         <td>{{this.nome}}</td>
         <td>{{this.cpf}}</td>
         <td>{{this.marca}}</td>
         <td>{{this.modelo}}</td>
         <td>{{this.ano}}</td>
         <td>{{this.valordiaria}}</td>
+        <td>{{this.idCliente}}</td>
+        <td>{{this.idVeiculo}}</td>
         
         
         
         <td>
-          <a href="/editar/locacao/{{this.id}}"><button><img src="/editar.png" width="15"> Editar </button></a>
-          <a href="/excluir/locacao/{{this.id}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar </button></a>
+          <a href="/editar/locacao/{{this.idLocacao}}"><button><img src="/editar.png" width="15"> Editar </button></a>
+          <a href="/excluir/locacao/{{this.idLocacao}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar </button></a>
         </td>
       </tr>
       

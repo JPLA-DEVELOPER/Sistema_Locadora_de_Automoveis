@@ -1,12 +1,11 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/connection');
 
-//RELACIONAMENTO
-const Cliente = require('./usuarioModel')
-const Veiculo = require('./veiculoModel')
+const Cliente = require('./clienteModel');
+const Veiculo = require('./veiculoModel');
 
 const Locacao = sequelize.define('Locacao', {
-  id: {
+  idLocacao: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     allowNull: false,
@@ -17,7 +16,7 @@ const Locacao = sequelize.define('Locacao', {
     allowNull: false
   },
   cpf: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: false
   },
   marca: {
@@ -33,14 +32,14 @@ const Locacao = sequelize.define('Locacao', {
     allowNull: false
   },
   valordiaria: {
-    type: DataTypes.DECIMAL,
+    type: DataTypes.INTEGER,
     allowNull: false
   }
+
   
 });
 
-// //RELACIONAMENTO
-Locacao.belongsTo(Cliente);
-Locacao.belongsTo(Veiculo);
+Locacao.belongsTo(Cliente, { foreignKey: 'idCliente' });
+Locacao.belongsTo(Veiculo, { foreignKey: 'idVeiculo' });
 
 module.exports = Locacao;

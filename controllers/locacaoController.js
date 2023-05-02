@@ -18,6 +18,8 @@ module.exports = class LocacaoController {
       modelo: req.body.modelo,
       ano: req.body.ano,
       valordiaria: req.body.valordiaria,
+      idCliente: req.body.idCliente,
+      idVeiculo: req.body.idVeiculo,
     }
     await Locacao.create(locacao)
       .then(() => {

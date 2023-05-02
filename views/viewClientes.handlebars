@@ -21,7 +21,7 @@
 
     {{#each cliente}}
       <tr>
-        <td>{{this.id}}</td>
+        <td>{{this.idCliente}}</td>
         <td>{{this.nome}}</td>
         <td>{{this.cpf}}</td>
         <td>{{this.email}}</td>
@@ -31,8 +31,8 @@
         
         
         <td>
-          <a href="/editar/cliente/{{this.id}}"><button><img src="/editar.png" width="15"> Editar </button></a>
-          <a href="/excluir/cliente/{{this.id}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar </button></a>
+          <a href="/editar/cliente/{{this.idCliente}}"><button><img src="/editar.png" width="15"> Editar </button></a>
+          <a href="/excluir/cliente/{{this.idCliente}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar </button></a>
         </td>
       </tr>
       
