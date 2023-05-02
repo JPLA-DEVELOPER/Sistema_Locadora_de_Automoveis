@@ -135,3 +135,12 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #3e8e41;
 }
+
+/*MENU LATERAL */
+
+.sidebar{
+    background-color:  rgb(43, 221, 162);
+    width: 150px;
+    height: 600px;
+    
+}

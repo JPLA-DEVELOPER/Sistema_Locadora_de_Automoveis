@@ -1,33 +1,33 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/connection');
 
-const Veiculo = sequelize.define('Veiculo', {
+const Cliente = sequelize.define('Cliente', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     allowNull: false,
     primaryKey: true
   },
-  marca: {
+  nome: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  modelo: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  ano: {
+  cpf: {
     type: DataTypes.INTEGER,
     allowNull: false
   },
-  cor: {
+  email: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  valordiaria: {
-    type: DataTypes.DECIMAL,
+  telefone:{
+    type: DataTypes.INTEGER
+  },
+  endereco: {
+    type: DataTypes.STRING,
     allowNull: false
   }
+  
 });
 
-module.exports = Veiculo;
+module.exports = Cliente;

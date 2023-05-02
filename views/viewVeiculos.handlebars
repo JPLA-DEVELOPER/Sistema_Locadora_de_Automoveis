@@ -1,0 +1,43 @@
+<h2> VEÍCULOS </h2>
+<table >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Ano</th>
+      <th>Cor</th>
+      <th>Valor Diária</th>
+      <th>Ações</th>
+      
+
+    
+    
+  <tbody>
+    
+  </thead>
+
+    {{#each veiculos}}
+      <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.marca}}</td>
+        <td>{{this.modelo}}</td>
+        <td>{{this.ano}}</td>
+        <td>{{this.cor}}</td>
+        <td>{{this.valordiaria}}</td>
+        
+        
+        <td>
+          <a href="/editar/veiculo/{{this.id}}"><button><img src="/editar.png" width="15"> Editar</button></a>
+          <a href="/excluir/veiculo/{{this.id}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar</button></a>
+        </td>
+      </tr>
+      
+    {{/each}}
+  </tbody>
+    <td>
+         <a href="/cadastro/veiculo"><button> <img src="/adicionar.png" width="15"> Adicionar Veículo</button></a>
+        </td>
+</table>
+
+<hr>

@@ -13,7 +13,7 @@ module.exports = class VeiculoController {
       modelo: req.body.modelo,
       ano: req.body.ano,
       cor:req.body.cor,
-      preco: req.body.preco,
+      valordiaria: req.body.valordiaria,
     }
 
     await Veiculo.create(veiculo)
@@ -27,12 +27,12 @@ module.exports = class VeiculoController {
 
   //EXIBE OS REGISTROS
   static async home(req, res) {//home, renderiza a página inicial da aplicação.
-    res.render('home')
+    res.render('/view/veiculos')
   }
 
   static async allVeiculos(req, res) {//allVeiculos, recupera todos os veículos do banco de dados usando o modelo Veiculo e os renderiza em uma view.
     const veiculos = await Veiculo.findAll({ raw: true })
-    res.render('home', { veiculos })
+    res.render('ViewVeiculos', { veiculos })
   }
 
 
@@ -49,7 +49,7 @@ module.exports = class VeiculoController {
       modelo: req.body.modelo,
       ano: req.body.ano,
       cor: req.body.cor,
-      preco: req.body.preco,
+      valordiaria: req.body.valordiaria,
     }
     await Veiculo.update(veiculo, { where: { id: id } })
       .then(res.render('sucesso_atualizar'))

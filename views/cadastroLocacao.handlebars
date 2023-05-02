@@ -1,0 +1,85 @@
+<!-- metodo GET e SET são responsaveis por enviar os dados do formulávio para o bachend-->
+<!-- metodo GET: envia esses dados pela url, o POST não-->
+ 
+<h1>Nova Locação</h1>
+<form action="/cadastro/locacao" method="post">
+
+  <form action="/locacoes" method="post">
+  <label for="cliente">Cliente:</label>
+  <select id="cliente" name="cliente">
+    <!-- lista de clientes cadastrados -->
+  </select>
+  <br>
+  <label for="veiculo">Veículo:</label>
+  <select id="veiculo" name="veiculo">
+    <!-- lista de veículos cadastrados -->
+  </select>
+  <br>
+  <label for="dataInicio">Data de início:</label>
+  <input type="date" id="dataInicio" name="dataInicio">
+  <br>
+  <label for="dataFim">Data de fim:</label>
+  <input type="date" id="dataFim" name="dataFim">
+  <br>
+  <input type="submit" value="Cadastrar">
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <label>Nome:</label>
+    <input type="text" name="nome"  placeholder="Digite seu nome">
+</div>
+<div>
+    <label>CPF:</label>
+    <input type="text" name="cpf" placeholder="Digite o seu cpf">
+</div>
+  <div>
+    <div>
+    <select>
+  <option value="opcao1">Opção 1</option>
+  <option value="opcao2">Opção 2</option>
+  <option value="opcao3">Opção 3</option>
+</select>
+
+  </div>
+  <div>
+    <label>Marca:</label>
+    <input type="text" name="marca"  placeholder="Digite a marca">
+  </div>
+
+<div>
+    <label>Modelo:</label>
+    <input type="text" name="modelo" placeholder="Digite o modelo">
+</div>
+
+<div>
+    <label>Ano:</label>
+    <input type="text" name="ano" placeholder="Digite o ano">
+</div>  
+<div>
+    <label>Valor Diária:</label>
+    <input type="text" name="valordiaria" placeholder="Digite o valorda diário do veículo">
+</div>
+   
+ <br>
+ <div class="btn-salvar">
+      <button > <img src="/salvar.png" width="15"> Salvar</button>
+    </div>
+   
+  </div>
+</form>
+
+ 
+<a href="/"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
+
+

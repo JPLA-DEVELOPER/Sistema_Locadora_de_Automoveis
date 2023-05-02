@@ -16,7 +16,6 @@ module.exports = class UsuarioController {
       email: req.body.email,
       senha: req.body.senha,
     }
-
     await Usuario.create(usuario)
       .then(() => {
       }).catch((error) => {

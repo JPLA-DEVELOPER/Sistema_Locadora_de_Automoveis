@@ -1,0 +1,42 @@
+<!-- metodo GET e SET são responsaveis por enviar os dados do formulávio para o bachend-->
+<!-- metodo GET: envia esses dados pela url, o POST não-->
+ 
+<h1>Cadastro de Cliente</h1>
+<form action="/cadastro/cliente" method="post">
+<div>
+<div>
+    <label>Nome:</label>
+    <input type="text" name="nome"  placeholder="Digite seu nome">
+</div>
+<div>
+    <label>CPF:</label>
+    <input type="text" name="cpf" placeholder="Digite o seu cpf">
+</div>
+
+<div>
+    <label>Email:</label>
+    <input type="text" name="email" placeholder="Digite o seu e-mail">
+</div>
+
+<div>
+    <label>Telefone:</label>
+    <input type="text" name="telefone" placeholder="Digite seu telefone">
+</div>  
+<div>
+    <label>Endereço:</label>
+    <input type="text" name="endereco" placeholder="Digite o seu endereço">
+</div>
+
+   
+ <br>
+ <div class="btn-salvar">
+      <button > <img src="/salvar.png" width="15"> Cadastrar</button>
+    </div>
+   
+  </div>
+</form>
+
+ 
+<a href="/view/clientes"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
+
+

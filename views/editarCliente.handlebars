@@ -1,0 +1,39 @@
+<!-- metodo GET e SET são responsaveis por enviar os dados do formulávio para o bachend-->
+<!-- metodo GET: envia esses dados pela url, o POST não-->
+ 
+<h1>Editar Cliente</h1>
+<form name="formularioeditar" action="/editar/cliente/{{cliente.id}}" method="post">
+ <div>
+    <div>
+    <label>Nome:</label>
+    <input type="text" name="nome"  value="{{ cliente.nome }}">
+  </div>
+
+<div>
+    <label>CPF:</label>
+    <input type="text" name="cpf" value="{{ cliente.cpf }}">
+</div>
+
+<div>
+    <label> Email:</label>
+    <input type="text" name="email" value="{{ cliente.email }}">
+</div>  
+<div>
+    <label>Telefone:</label>
+    <input type="text" name="telefone" value="{{ cliente.telefone }}">
+</div>
+<div>
+    <label>Endereço:</label>
+    <input type="text" name="endereço" value="{{ cliente.endereco}}">
+</div>
+   
+ <br>
+ <div class="btn-salvar">
+      <button > <img src="/salvar.png" width="15"> Salvar</button>
+    </div>
+   
+  </div>
+</form>
+
+ 
+<a href="/view/clientes"><button> <img src="/voltar.png" width="15"> Voltar</button></a>

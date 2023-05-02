@@ -1,0 +1,48 @@
+
+<h2> CLIENTES </h2>
+
+<table >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Endereço</th>
+      <th>Ações</th>
+      
+
+    
+    </tr>
+  <tbody>
+    
+  </thead>
+
+    {{#each cliente}}
+      <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.nome}}</td>
+        <td>{{this.cpf}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.telefone}}</td>
+        <td>{{this.endereco}}</td>
+        
+        
+        
+        <td>
+          <a href="/editar/cliente/{{this.id}}"><button><img src="/editar.png" width="15"> Editar </button></a>
+          <a href="/excluir/cliente/{{this.id}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar </button></a>
+        </td>
+      </tr>
+      
+    {{/each}}
+  </tbody>
+    <td>
+         <a href="/cadastro/cliente"><button> <img src="/adicionar.png" width="15"> Adicionar </button></a>
+        </td>
+</table>
+<a href="/"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
+
+
+

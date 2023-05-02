@@ -7,6 +7,8 @@ const sequelize = require('./database/connection')
 // Importando rotas
 const veiculoRotas = require('./routes/veiculoRotas');
 const usuarioRotas = require('./routes/usuarioRotas');
+const clienteRotas = require('./routes/clienteRotas')
+const locacaoRotas = require('./routes/locacaoRotas')
 
 
 
@@ -25,6 +27,8 @@ app.use(express.static('public'));
 // Configurando rotas
 app.use('/', veiculoRotas)
 app.use('/', usuarioRotas)
+app.use('/', clienteRotas)
+app.use('/', locacaoRotas)
 
 // Sincronizando com o banco de dados e iniciando servidor
 sequelize.sync().then(() => {

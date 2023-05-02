@@ -5,7 +5,7 @@ const VeiculoController = require('../controllers/veiculoController');
 
 
 //LISTAR TODOS OS VEICULOS CADASTRADOS
-router.get('/', VeiculoController.allVeiculos)
+router.get('/view/veiculos', VeiculoController.allVeiculos)
 
 
 //ADICIONAR VEÍCULO
