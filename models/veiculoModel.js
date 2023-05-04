@@ -5,9 +5,9 @@ const Cliente = require('./clienteModel');
 const Veiculo = sequelize.define('Veiculo', {
   idVeiculo: {
     type: DataTypes.INTEGER,
-    autoIncrement: true,
-    allowNull: false,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
+
   },
   marca: {
     type: DataTypes.STRING,
@@ -30,18 +30,11 @@ const Veiculo = sequelize.define('Veiculo', {
     allowNull: false
   },
 
-  idCliente: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: 'clientes',
-      key: 'idCliente'
-    }
-  },
   
 });
 
-
-Veiculo.belongsTo(Cliente, { foreignKey: 'idCliente' });// indica que a tabela Veiculo pertence a um Cliente, e usa a coluna idCliente como chave estrangeira.
+//RELACIONAMENTOS
+Veiculo.belongsTo(Cliente, { foreignKey: 'idCliente' }); // um veículo pertence a um cliente
+Cliente.hasMany(Veiculo, { foreignKey: 'idCliente' }); // um cliente possui vários veículos
 
 module.exports = Veiculo;

@@ -6,20 +6,17 @@ module.exports = class LocacaoController {
 
 
 //ADICIONA REGISTROS-----------------------------------------------------------------------------
-  static newLocacao(req, res) { //newUser, renderiza um formulário para criar um novo usuário.
+  static newLocacao(req, res) { //newLocacao, renderiza um formulário para criar uma nova locação.
+        
     res.render('cadastroLocacao')
   }
 
-  static async newLocacaoSave(req, res) { //newClienteSave, recebe uma requisição POST com os dados do usuário e os salva no banco de dados usando o modelo User. Se a operação de salvamento for bem-sucedida, o método redireciona o usuário para a página que exibe todos os usuários.
+  static async newLocacaoSave(req, res) { //newLocacaoSave, recebe uma requisição POST com os dados do usuário e os salva no banco de dados usando o modelo Locacao. Se a operação de salvamento for bem-sucedida, o método redireciona o usuário para a página que exibe todas as locações.
     const locacao = {
-      nome: req.body.nome,
-      cpf: req.body.cpf,
-      marca: req.body.marca,
-      modelo: req.body.modelo,
-      ano: req.body.ano,
-      valordiaria: req.body.valordiaria,
-      idCliente: req.body.idCliente,
-      idVeiculo: req.body.idVeiculo,
+      dataInicio: req.body.dataInicio,
+      dataFim: req.body.dataFim,
+
+    
     }
     await Locacao.create(locacao)
       .then(() => {
@@ -36,28 +33,24 @@ module.exports = class LocacaoController {
     res.render('viewLocacoes')
   }
 
-  static async allLocacao(req, res) {//allUsers, recupera todos os usuários do banco de dados usando o modelo User e os renderiza em uma view.
+  static async allLocacao(req, res) {//allLocacao, recupera todos os locacões do banco de dados usando o modelo Locacao e os renderiza em uma view.
     const locacao = await Locacao.findAll({ raw: true })
     res.render('viewLocacoes', { locacao })
   }
 
 
   //ATUALIZA REGISTROS------------------------------------------------------------------
-  static async updateLocacao(req, res) {//updateUser, recupera um único usuário do banco de dados com base no ID fornecido, renderiza um formulário de edição e preenche o formulário com os dados do usuário.
+  static async updateLocacao(req, res) {//updateLocacao, recupera uma única locacao do banco de dados com base no ID fornecido, renderiza um formulário de edição e preenche o formulário com os dados da locacão.
     const locacao = await Locacao.findOne({ where: {'id': req.params.id}, raw: true })
     res.render('editarLocacao', { locacao })
 
   }
 
-  static async updateLocacaoSave(req, res) {//updateUserSave, recebe uma requisição POST com dados de usuário atualizados, atualiza o usuário correspondente no banco de dados usando o modelo User e redireciona o usuário para a página que exibe todos os usuários.
+  static async updateLocacaoSave(req, res) {//updateLocacaoSave, recebe uma requisição POST com dados de uma locacão atualizados, atualiza o usuário correspondente no banco de dados usando o modelo Locacao e redireciona o usuário para a página que exibe todos as locações.
     const id = req.params.id 
     const locacao = {
-        nome: req.body.nome,
-        cpf: req.body.cpf,
-        marca: req.body.marca,
-        modelo: req.body.modelo,
-        ano: req.body.ano,
-        valordiaria: req.body.valordiaria,
+      dataInicio: req.body.dataInicio,
+      dataFim: req.body.dataFim,
     }
     await Locacao.update(locacao, { where: { id: id } })
       .then(res.redirect('/view/locacao'))
@@ -67,7 +60,7 @@ module.exports = class LocacaoController {
   }
 
   //EXCLUI REGISTROS----------------------------------
-  static async removeLocacao(req, res) { //removeUser, recebe uma requisição POST com o ID do usuário a ser removido, exclui o usuário correspondente do banco de dados usando o modelo User e redireciona o usuário para a página que exibe todos os usuários.
+  static async removeLocacao(req, res) { //removeLocacao, recebe uma requisição POST com o Id da locação a ser removida, exclui a  locação correspondente do banco de dados usando o modelo Locacao e redireciona o usuário para a página que exibe todos as locacões.
     await Locacao.destroy({where: {'id': req.params.id}})
       .then(res.redirect('/view/locacao'))
       .catch((err) => {

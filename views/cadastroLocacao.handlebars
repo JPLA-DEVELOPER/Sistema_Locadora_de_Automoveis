@@ -1,58 +1,32 @@
-<!-- metodo GET e SET são responsaveis por enviar os dados do formulávio para o bachend-->
-<!-- metodo GET: envia esses dados pela url, o POST não-->
+
  
 <h1>Nova Locação</h1>
 <form action="/cadastro/locacao"  method="post">
 <div>
 
 
-
-  <div>
-    <label for="cpfCliente">CPF do cliente:</label>
-    <input type="text" id="cpfCliente" name="cpfCliente" required>
-  </div>
-  <div>
-    <label for="placaVeiculo">Placa do veículo:</label>
-    <input type="text" id="placaVeiculo" name="placaVeiculo" required>
-  </div>
-  <div>
-    <label for="dataInicio">Data de início:</label>
-    <input type="date" id="dataInicio" name="dataInicio" required>
-  </div>
-  <div>
-    <label for="dataFim">Data de término:</label>
-    <input type="date" id="dataFim" name="dataFim" required>
-  </div>
+<h1>{{locacao.dataInicio}}</h1>
 
 
-
-
-  <div>
-    <label>Nome:</label>
-    <input type="text" name="nome"  placeholder="Digite seu nome">
-</div>
 <div>
     <label>CPF:</label>
-    <input type="text" name="cpf" placeholder="Digite o seu cpf">
-</div>
-  
-  <div>
-    <label>Marca:</label>
-    <input type="text" name="marca"  placeholder="Digite a marca">
-  </div>
+    <input type="text" name="cpf" placeholder="Digite o cpf">
+    <button type="button" id="buscar-cliente">Buscar</button>
+</div> 
 
 <div>
-    <label>Modelo:</label>
-    <input type="text" name="modelo" placeholder="Digite o modelo">
+    <label>Placa Veículo</label>:</label>
+    <input type="text" name="placa" placeholder="Digite a placa">
+    <button type="button" id="buscar-cliente">Buscar</button>
+</div> 
+<div>
+    <label>Data Início:</label>
+    <input type="date" name="dataInicio">
 </div>
 
 <div>
-    <label>Ano:</label>
-    <input type="text" name="ano" placeholder="Digite o ano">
-</div>  
-<div>
-    <label>Valor Diária:</label>
-    <input type="text" name="valordiaria" placeholder="Digite o valorda diário do veículo">
+    <label>Data Fim:</label>
+    <input type="date" name="dataFim">
 </div>
    
  <br>
