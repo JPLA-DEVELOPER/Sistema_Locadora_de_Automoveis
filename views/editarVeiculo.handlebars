@@ -1,39 +1,47 @@
 <!-- metodo GET e SET são responsaveis por enviar os dados do formulávio para o bachend-->
 <!-- metodo GET: envia esses dados pela url, o POST não-->
  
-<h1>Editar Veículo</h1>
-<form name="formularioeditar" action="/editar/veiculo/{{veiculo.idVeiculo}}" method="post">
- <div>
-    <div>
-    <label>Marca:</label>
-    <input type="text" name="marca"  value="{{ veiculo.marca }}">
-  </div>
-
 <div>
-    <label>Modelo:</label>
-    <input type="text" name="modelo" value="{{ veiculo.modelo }}">
-</div>
-
-<div>
-    <label>Ano:</label>
-    <input type="text" name="ano" value="{{ veiculo.ano }}">
-</div>  
-<div>
-    <label>Cor:</label>
-    <input type="text" name="cor" value="{{ veiculo.cor }}">
-</div>
-<div>
-    <label>Valor Diária:</label>
-    <input type="text" name="valordiaria" value="{{ veiculo.valordiaria }}">
-</div>
-   
- <br>
- <div class="btn-salvar">
-      <button > <img src="/salvar.png" width="15"> Salvar</button>
+  <div class="row">
+    <div class="col-2">
+      {{> menuLateral}}
     </div>
-   
-  </div>
-</form>
+    
+    <div class="col-10 container w-50 justify-content-center">
+      <h2>Editar Veículo</h2>
+      <form name="formularioeditar" action="/editar/veiculo/{{veiculo.idVeiculo}}" method="post">
+      <div>
+          <div>
+            <label>Marca:</label>
+            <input type="text" name="marca"  value="{{ veiculo.marca }}">
+          </div>
 
- 
-<a href="/"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
+          <div>
+              <label>Modelo:</label>
+              <input type="text" name="modelo" value="{{ veiculo.modelo }}">
+          </div>
+
+          <div>
+              <label>Ano:</label>
+              <input type="text" name="ano" value="{{ veiculo.ano }}">
+          </div>  
+
+          <div>
+              <label>Cor:</label>
+              <input type="text" name="cor" value="{{ veiculo.cor }}">
+          </div>
+          <div>
+              <label>Valor Diária:</label>
+              <input type="text" name="valordiaria" value="{{ veiculo.valordiaria }}">
+          </div>
+        
+          <div>
+            <button class="btn-salvar btn btn-primary">Salvar</button>
+            <a href="/view/veiculos"><button type="button" class="btn btn-secondary">Cancelar</button></a>
+          </div>
+
+        </div>
+      </form>
+     </div>
+  </div>
+</div>

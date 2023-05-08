@@ -1,39 +1,45 @@
 <!-- metodo GET e SET são responsaveis por enviar os dados do formulávio para o bachend-->
 <!-- metodo GET: envia esses dados pela url, o POST não-->
  
-<h1>Editar Cliente</h1>
-<form name="formularioeditar" action="/editar/cliente/{{cliente.idCliente}}" method="post">
- <div>
-    <div>
-    <label>Nome:</label>
-    <input type="text" name="nome"  value="{{ cliente.nome }}">
-  </div>
-
 <div>
-    <label>CPF:</label>
-    <input type="text" name="cpf" value="{{ cliente.cpf }}">
-</div>
-
-<div>
-    <label> Email:</label>
-    <input type="text" name="email" value="{{ cliente.email }}">
-</div>  
-<div>
-    <label>Telefone:</label>
-    <input type="text" name="telefone" value="{{ cliente.telefone }}">
-</div>
-<div>
-    <label>Endereço:</label>
-    <input type="text" name="endereço" value="{{ cliente.endereco}}">
-</div>
-   
- <br>
- <div class="btn-salvar">
-      <button > <img src="/salvar.png" width="15"> Salvar</button>
+  <div class="row">
+    <div class="col-2">
+      {{> menuLateral}}
     </div>
-   
-  </div>
-</form>
+    
+    <div class="col-10 container w-50 justify-content-center">
+      <h2>Editar Cliente</h2>
+      <form name="formularioeditar" action="/editar/cliente/{{cliente.idCliente}}" method="post">
+        <div>
+          <div>
+            <label>Nome:</label>
+            <input type="text" name="nome"  value="{{ cliente.nome }}">
+          </div>
 
- 
-<a href="/view/clientes"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
+          <div>
+              <label>CPF:</label>
+              <input type="text" name="cpf" value="{{ cliente.cpf }}">
+          </div>
+
+          <div>
+              <label> Email:</label>
+              <input type="text" name="email" value="{{ cliente.email }}">
+          </div>  
+          <div>
+              <label>Telefone:</label>
+              <input type="text" name="telefone" value="{{ cliente.telefone }}">
+          </div>
+          <div>
+              <label>Endereço:</label>
+              <input type="text" name="endereço" value="{{ cliente.endereco}}">
+          </div>
+
+          <div class="btn-salvar">
+            <button class="btn-salvar btn btn-primary">Salvar</button>
+            <a href="/view/clientes"><button type="button" class="btn btn-secondary">Cancelar</button></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
