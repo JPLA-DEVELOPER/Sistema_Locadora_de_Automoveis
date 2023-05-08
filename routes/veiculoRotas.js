@@ -13,12 +13,12 @@ router.get('/cadastro/veiculo', VeiculoController.newVeiculo)
 router.post('/cadastro/veiculo', VeiculoController.newVeiculoSave)
 
 //ATUALIZAR VEICULO
-router.get('/editar/veiculo/:id', VeiculoController.updateVeiculo)
-router.post('/editar/veiculo/:id', VeiculoController.updateVeiculoSave)
+router.get('/editar/veiculo/:idVeiculo', VeiculoController.updateVeiculo)
+router.post('/editar/veiculo/:idVeiculo', VeiculoController.updateVeiculoSave)
 
 
 //EXCLUIR VEÍCULOS
-router.get('/excluir/veiculo/:id', VeiculoController.removeVeiculo)
-router.post('/excluir/veiculo/:id', VeiculoController.removeVeiculo)
+router.get('/excluir/veiculo/:idVeiculo', VeiculoController.removeVeiculo)
+router.post('/excluir/veiculo/:idVeiculo', VeiculoController.removeVeiculo)
 
 module.exports = router;

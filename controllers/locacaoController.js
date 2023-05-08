@@ -41,18 +41,18 @@ module.exports = class LocacaoController {
 
   //ATUALIZA REGISTROS------------------------------------------------------------------
   static async updateLocacao(req, res) {//updateLocacao, recupera uma única locacao do banco de dados com base no ID fornecido, renderiza um formulário de edição e preenche o formulário com os dados da locacão.
-    const locacao = await Locacao.findOne({ where: {'id': req.params.id}, raw: true })
+    const locacao = await Locacao.findOne({ where: {'idLocacao': req.params.idLocacao}, raw: true })
     res.render('editarLocacao', { locacao })
 
   }
 
   static async updateLocacaoSave(req, res) {//updateLocacaoSave, recebe uma requisição POST com dados de uma locacão atualizados, atualiza o usuário correspondente no banco de dados usando o modelo Locacao e redireciona o usuário para a página que exibe todos as locações.
-    const id = req.params.id 
+    const idLocacao = req.params.idLocacao 
     const locacao = {
       dataInicio: req.body.dataInicio,
       dataFim: req.body.dataFim,
     }
-    await Locacao.update(locacao, { where: { id: id } })
+    await Locacao.update(locacao, { where: { idLocacao: idLocacao } })
       .then(res.redirect('/view/locacao'))
       .catch((err) => {
         console.log(err)
@@ -61,7 +61,7 @@ module.exports = class LocacaoController {
 
   //EXCLUI REGISTROS----------------------------------
   static async removeLocacao(req, res) { //removeLocacao, recebe uma requisição POST com o Id da locação a ser removida, exclui a  locação correspondente do banco de dados usando o modelo Locacao e redireciona o usuário para a página que exibe todos as locacões.
-    await Locacao.destroy({where: {'id': req.params.id}})
+    await Locacao.destroy({where: {'idLocacao': req.params.idLocacao}})
       .then(res.redirect('/view/locacao'))
       .catch((err) => {
         console.log(err)

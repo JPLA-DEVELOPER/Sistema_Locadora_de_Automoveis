@@ -15,13 +15,13 @@ router.get('/cadastro/cliente', ClienteController.newCliente)
 router.post('/cadastro/cliente', ClienteController.newClienteSave)
 
 //ATUALIZAR CLIENTE
-router.get('/editar/cliente/:id', ClienteController.updateCliente)
-router.post('/editar/cliente/:id', ClienteController.updateClienteSave)
+router.get('/editar/cliente/:idCliente', ClienteController.updateCliente)
+router.post('/editar/cliente/:idCliente', ClienteController.updateClienteSave)
 
 
 //EXCLUIR CLIENTE
-router.get('/excluir/cliente/:id', ClienteController.removeCliente)
-router.post('/excluir/cliente/:id', ClienteController.removeCliente)
+router.get('/excluir/cliente/:idCliente', ClienteController.removeCliente)
+router.post('/excluir/cliente/:idCliente', ClienteController.removeCliente)
 
 
 

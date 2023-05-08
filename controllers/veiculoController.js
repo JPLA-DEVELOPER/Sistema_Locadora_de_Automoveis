@@ -38,12 +38,12 @@ module.exports = class VeiculoController {
 
   //ATUALIZA REGISTROS------------------------------------------------------------------
   static async updateVeiculo(req, res) {//updateVeiculo, recupera um único veículo do banco de dados com base no ID fornecido, renderiza um formulário de edição e preenche o formulário com os dados do veículo.
-    const veiculo = await Veiculo.findOne({ where: {'id': req.params.id}, raw: true })
+    const veiculo = await Veiculo.findOne({ where: {'idVeiculo': req.params.idVeiculo}, raw: true })
     res.render('editarVeiculo', { veiculo })
   }
 
   static async updateVeiculoSave(req, res) {//updateVeiculoSave, recebe uma requisição POST com dados de veículo atualizados, atualiza o veículo correspondente no banco de dados usando o modelo Veiculo e redireciona o usuário para a página que exibe todos os veículos.
-    const id = req.params.id 
+    const idVeiculo = req.params.idVeiculo 
     const veiculo = {
       marca: req.body.marca,
       modelo: req.body.modelo,
@@ -51,7 +51,7 @@ module.exports = class VeiculoController {
       cor: req.body.cor,
       valordiaria: req.body.valordiaria,
     }
-    await Veiculo.update(veiculo, { where: { id: id } })
+    await Veiculo.update(veiculo, { where: { idVeiculo: idVeiculo } })
       .then(res.render('sucesso_atualizar'))
       .catch((err) => {
         console.log(err)
@@ -60,7 +60,7 @@ module.exports = class VeiculoController {
 
   //EXCLUI REGISTROS----------------------------------
   static async removeVeiculo(req, res) { //removeVeiculo, recebe uma requisição POST com o ID do veículo a ser removido, exclui o veículo correspondente do banco de dados usando o modelo Veiculo e redireciona o usuário para a página que exibe todos os veículos.
-    await Veiculo.destroy({where: {'id': req.params.id}})
+    await Veiculo.destroy({where: {'idVeiculo': req.params.idVeiculo}})
       .then(res.render('sucesso_deletar'))
       .catch((err) => {
         console.log(err)

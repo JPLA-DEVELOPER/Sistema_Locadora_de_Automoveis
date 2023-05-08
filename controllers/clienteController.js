@@ -43,13 +43,13 @@ module.exports = class ClienteController {
 
   //ATUALIZA REGISTROS------------------------------------------------------------------
   static async updateCliente(req, res) {//updateUser, recupera um único usuário do banco de dados com base no ID fornecido, renderiza um formulário de edição e preenche o formulário com os dados do usuário.
-    const cliente = await Cliente.findOne({ where: {'id': req.params.id}, raw: true })
+    const cliente = await Cliente.findOne({ where: {'idCliente': req.params.idCliente}, raw: true })
     res.render('editarCliente', { cliente })
 
   }
 
   static async updateClienteSave(req, res) {//updateUserSave, recebe uma requisição POST com dados de usuário atualizados, atualiza o usuário correspondente no banco de dados usando o modelo User e redireciona o usuário para a página que exibe todos os usuários.
-    const id = req.params.id 
+    const idCliente = req.params.idCliente 
     const cliente = {
         nome: req.body.nome,
         cpf: req.body.cpf,
@@ -57,7 +57,7 @@ module.exports = class ClienteController {
         telefone: req.body.telefone,
         endereco: req.body.endereco,
     }
-    await Cliente.update(cliente, { where: { id: id } })
+    await Cliente.update(cliente, { where: { idCliente: idCliente } })
       .then(res.redirect('/view/clientes'))
       .catch((err) => {
         console.log(err)
@@ -66,7 +66,7 @@ module.exports = class ClienteController {
 
   //EXCLUI REGISTROS----------------------------------
   static async removeCliente(req, res) { //removeUser, recebe uma requisição POST com o ID do usuário a ser removido, exclui o usuário correspondente do banco de dados usando o modelo User e redireciona o usuário para a página que exibe todos os usuários.
-    await Cliente.destroy({where: {'id': req.params.id}})
+    await Cliente.destroy({where: {'idCliente': req.params.idCliente}})
       .then(res.redirect('/view/clientes'))
       .catch((err) => {
         console.log(err)
