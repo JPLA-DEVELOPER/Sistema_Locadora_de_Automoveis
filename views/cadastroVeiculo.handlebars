@@ -1,41 +1,50 @@
 <!-- metodo GET e SET são responsaveis por enviar os dados do formulávio para o bachend-->
 <!-- metodo GET: envia esses dados pela url, o POST não-->
  
-<h1>Adicionar Veículo</h1>
-<form action="/cadastro/veiculo" method="post">
-  <div>
-    <div>
-    <label>Marca:</label>
-    <input type="text" name="marca"  placeholder="Digite a marca">
+<div>
+  <div class="row">
+    <div class="col-2">
+      {{> menuLateral}}
+    </div>
+    
+    <div class="col-10 container w-50 justify-content-center">
+      <h2>Novo Automóvel</h2>
+      <form action="/cadastro/veiculo" method="post">
+        <div>
+          <div>
+            <label>Marca:</label>
+            <input type="text" name="marca"  placeholder="Digite a marca">
+          </div>
+
+          <div>
+            <label>Modelo:</label>
+            <input type="text" name="modelo" placeholder="Digite o modelo">
+          </div>
+
+          <div>
+            <label>Ano:</label>
+            <input type="text" name="ano" placeholder="Digite o ano">
+          </div>
+
+          <div>
+            <label>Cor:</label>
+            <input type="text" name="cor" placeholder="Digite a cor">
+          </div>
+
+          <div>
+            <label>Valor Diária:</label>
+            <input type="text" name="valordiaria" placeholder="Digite o valorda diário do veículo">
+          </div>
+
+          <div>
+            <button class="btn-salvar btn btn-primary">Salvar</button>
+            <a href="/view/veiculos"><button type="button" class="btn btn-secondary">Cancelar</button></a>
+          </div>
+          
+        </div>
+      </form>
+    </div>
   </div>
-
-<div>
-    <label>Modelo:</label>
-    <input type="text" name="modelo" placeholder="Digite o modelo">
 </div>
-
-<div>
-    <label>Ano:</label>
-    <input type="text" name="ano" placeholder="Digite o ano">
-</div>  
-<div>
-    <label>Cor:</label>
-    <input type="text" name="cor" placeholder="Digite a cor">
-</div>
-<div>
-    <label>Valor Diária:</label>
-    <input type="text" name="valordiaria" placeholder="Digite o valorda diário do veículo">
-</div>
-   
- <br>
- <div class="btn-salvar">
-      <button > <img src="/salvar.png" width="15"> Salvar</button>
- </div>
-   
-  </div>
-</form>
-
- 
-<a href="/view/veiculos"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
 
 

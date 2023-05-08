@@ -1,55 +1,54 @@
-
-
-<h2> LOCAÇÕES </h2>
-
-<table >
-  <thead>
-    <tr>
-      <th>ID Locação</th>
-      <th>Nome</th>
-      <th>CPF</th>
-      <th>Marca</th>
-      <th>Modelo</th>
-      <th>Ano</th>
-      <th>Valor Diária</th>
-      <th>ClienteID</th>
-      <th>VeiculoID</th>
-      <th>Ações</th>
-      
-
+<div>
+  <div class="row">
+    <div class="col-2">
+      {{> menuLateral}}
+    </div>
     
-    </tr>
-  <tbody>
-    
-  </thead>
+    <div class="col-10">
+      <h2>Todas as Locações</h2>
+      <table class="table table-striped" style="background-color: #F5F8FF;">
+        <thead>
+          <tr>
+            <th scope="col">ID Locação</th>
+            <th scope="col">Nome</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Ano</th>
+            <th scope="col">Valor Diária</th>
+            <th scope="col">ClienteID</th>
+            <th scope="col">VeiculoID</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
 
-    {{#each locacao}}
-      <tr>
-        <td>{{this.idLocacao}}</td>
-        <td>{{this.nome}}</td>
-        <td>{{this.cpf}}</td>
-        <td>{{this.marca}}</td>
-        <td>{{this.modelo}}</td>
-        <td>{{this.ano}}</td>
-        <td>{{this.valordiaria}}</td>
-        <td>{{this.idCliente}}</td>
-        <td>{{this.idVeiculo}}</td>
-        
-        
-        
-        <td>
-          <a href="/editar/locacao/{{this.idLocacao}}"><button><img src="/editar.png" width="15"> Editar </button></a>
-          <a href="/excluir/locacao/{{this.idLocacao}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar </button></a>
-        </td>
-      </tr>
-      
-    {{/each}}
-  </tbody>
-    <td>
-         <a href="/cadastro/locacao"><button> <img src="/adicionar.png" width="15"> Adicionar </button></a>
-        </td>
-</table>
-<a href="/"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
+        <tbody>
+          {{#each locacao}}
+            <tr>
+              <th scope="row">{{this.idLocacao}}</th>
+              <td>{{this.nome}}</td>
+              <td>{{this.cpf}}</td>
+              <td>{{this.marca}}</td>
+              <td>{{this.modelo}}</td>
+              <td>{{this.ano}}</td>
+              <td>{{this.valordiaria}}</td>
+              <td>{{this.idCliente}}</td>
+              <td>{{this.idVeiculo}}</td>
+
+              <td>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <a href="/editar/locacao/{{this.idLocacao}}"><button type="button" class="btn btn-outline-info btn-sm"><i class="bi bi-pen-fill"></i>Editar</button></a>
+                  <a href="/excluir/locacao/{{this.idLocacao}}"><button type="button" class="btn btn-outline-danger btn-sm"><i class="bi bi-person-dash"></i>Deletar</button></a>
+                </div>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <a class="btn btn-primary" href="/cadastro/locacao" role="button"><i class="bi bi-plus-circle"></i> Novo</a>
+    </div>
+  </div>
+</div>  
 
 
 

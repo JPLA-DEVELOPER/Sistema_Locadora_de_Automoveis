@@ -1,48 +1,48 @@
-
-<h2> CLIENTES </h2>
-
-<table >
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>CPF</th>
-      <th>Email</th>
-      <th>Telefone</th>
-      <th>Endereço</th>
-      <th>Ações</th>
-      
-
+<div>
+  <div class="row">
+    <div class="col-2">
+      {{> menuLateral}}
+    </div>
     
-    </tr>
-  <tbody>
-    
-  </thead>
+    <div class="col-10">
+    <h2>Lista de Clientes</h2>
 
-    {{#each cliente}}
-      <tr>
-        <td>{{this.idCliente}}</td>
-        <td>{{this.nome}}</td>
-        <td>{{this.cpf}}</td>
-        <td>{{this.email}}</td>
-        <td>{{this.telefone}}</td>
-        <td>{{this.endereco}}</td>
-        
-        
-        
-        <td>
-          <a href="/editar/cliente/{{this.idCliente}}"><button><img src="/editar.png" width="15"> Editar </button></a>
-          <a href="/excluir/cliente/{{this.idCliente}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar </button></a>
-        </td>
-      </tr>
-      
-    {{/each}}
-  </tbody>
-    <td>
-         <a href="/cadastro/cliente"><button> <img src="/adicionar.png" width="15"> Adicionar </button></a>
-        </td>
-</table>
-<a href="/"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
+    <table class="table table-striped" style="background-color: #F5F8FF;">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Email</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Endereço</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
 
+      <tbody>
+        {{#each cliente}}
+          <tr>
+            <th scope="row">{{this.idCliente}}</th>
+            <td>{{this.nome}}</td>
+            <td>{{this.cpf}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.telefone}}</td>
+            <td>{{this.endereco}}</td>
+          
+            <td>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="/editar/cliente/{{this.idCliente}}"><button type="button" class="btn btn-outline-info btn-sm"><i class="bi bi-pen-fill"></i>Editar</button></a>
+                <a href="/excluir/cliente/{{this.idCliente}}"><button type="button" class="btn btn-outline-danger btn-sm"><i class="bi bi-person-dash"></i>Deletar</button></a>
+              </div>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
 
+    <a class="btn btn-primary" href="/cadastro/cliente" role="button"><i class="bi bi-person-plus-fill"></i> Novo</a>
 
+    </div>  
+  </div>
+</div>

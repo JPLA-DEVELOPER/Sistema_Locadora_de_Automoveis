@@ -1,43 +1,45 @@
-<h2> VEÍCULOS </h2>
-<table >
-  <thead>
-    <tr>
-      <th>ID Veiculo</th>
-      <th>Marca</th>
-      <th>Modelo</th>
-      <th>Ano</th>
-      <th>Cor</th>
-      <th>Valor Diária</th>
-      <th>Ações</th>
-      
+<div>
+  <div class="row">
+    <div class="col-2">
+      {{> menuLateral}}
+    </div>
+    
+    <div class="col-10">
+      <h2>Todos os Automóveis</h2>
+      <table class="table table-striped" style="background-color: #F5F8FF;">
+        <thead>
+          <tr>
+            <th scope="col">ID Veiculo</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Ano</th>
+            <th scope="col">Cor</th>
+            <th scope="col">Valor Diária</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>  
 
-    
-    
-  <tbody>
-    
-  </thead>
+        <tbody>
+          {{#each veiculos}}
+            <tr>
+              <th scope="row">{{this.idVeiculo}}</th>
+              <td>{{this.marca}}</td>
+              <td>{{this.modelo}}</td>
+              <td>{{this.ano}}</td>
+              <td>{{this.cor}}</td>
+              <td>{{this.valordiaria}}</td>
 
-    {{#each veiculos}}
-      <tr>
-        <td>{{this.idVeiculo}}</td>
-        <td>{{this.marca}}</td>
-        <td>{{this.modelo}}</td>
-        <td>{{this.ano}}</td>
-        <td>{{this.cor}}</td>
-        <td>{{this.valordiaria}}</td>
-        
-        
-        <td>
-          <a href="/editar/veiculo/{{this.idVeiculo}}"><button><img src="/editar.png" width="15"> Editar</button></a>
-          <a href="/excluir/veiculo/{{this.idVeiculo}}"><button id="btn_deletar"><img src="/deletar.png" width="15"> Deletar</button></a>
-        </td>
-      </tr>
-      
-    {{/each}}
-  </tbody>
-    <td>
-         <a href="/cadastro/veiculo"><button> <img src="/adicionar.png" width="15"> Adicionar Veículo</button></a>
-        </td>
-</table>
-<a href="/"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
-<hr>
+              <td>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <a href="/editar/veiculo/{{this.idVeiculo}}"><button type="button" class="btn btn-outline-info btn-sm"><i class="bi bi-pen-fill"></i>Editar</button></a>
+                  <a href="/excluir/veiculo/{{this.idVeiculo}}"><button type="button" class="btn btn-outline-danger btn-sm"><i class="bi bi-person-dash"></i>Deletar</button></a>
+                </div>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <a class="btn btn-primary" href="/cadastro/veiculo" role="button"><i class="bi bi-plus-circle"></i> Novo</a>
+    </div>
+  </div>
+</div>    

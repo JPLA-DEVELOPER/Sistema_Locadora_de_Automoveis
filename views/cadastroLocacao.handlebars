@@ -1,43 +1,45 @@
-
- 
-<h1>Nova Locação</h1>
-<form action="/cadastro/locacao"  method="post">
 <div>
+    <div class="row">
+        <div class="col-2">
+        {{> menuLateral}}
+        </div>
+        
+        <div class="col-10 container w-50 justify-content-center">
+            <h2>Nova Locação</h2>
+            <form action="/cadastro/locacao"  method="post">
+                <div>
+                    <h1>{{locacao.dataInicio}}</h1>
 
 
-<h1>{{locacao.dataInicio}}</h1>
+                    <div>
+                        <label>CPF:</label>
+                        <input type="text" name="cpf" placeholder="Digite o cpf">
+                        <button type="button" id="buscar-cliente">Buscar</button>
+                    </div> 
 
+                    <div>
+                        <label>Placa Veículo</label>:</label>
+                        <input type="text" name="placa" placeholder="Digite a placa">
+                        <button type="button" id="buscar-cliente">Buscar</button>
+                    </div> 
 
-<div>
-    <label>CPF:</label>
-    <input type="text" name="cpf" placeholder="Digite o cpf">
-    <button type="button" id="buscar-cliente">Buscar</button>
-</div> 
+                    <div>
+                        <label>Data Início:</label>
+                        <input type="date" name="dataInicio">
+                    </div>
 
-<div>
-    <label>Placa Veículo</label>:</label>
-    <input type="text" name="placa" placeholder="Digite a placa">
-    <button type="button" id="buscar-cliente">Buscar</button>
-</div> 
-<div>
-    <label>Data Início:</label>
-    <input type="date" name="dataInicio">
-</div>
+                    <div>
+                        <label>Data Fim:</label>
+                        <input type="date" name="dataFim">
+                    </div>
 
-<div>
-    <label>Data Fim:</label>
-    <input type="date" name="dataFim">
-</div>
-   
- <br>
- <div class="btn-salvar">
-      <button > <img src="/salvar.png" width="15"> Salvar</button>
+                    <div>
+                        <button class="btn-salvar btn btn-primary">Salvar</button>
+                        <a href="/view/locacao"><button type="button" class="btn btn-secondary">Cancelar</button></a>
+                    </div>
+                
+                </div>
+            </form>
+        </div>
     </div>
-   
-  </div>
-</form>
-
- 
-<a href="/"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
-
-
+</div>

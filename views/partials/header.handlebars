@@ -1,11 +1,17 @@
 
 <header>
-  <img src="/logo.png" width="200"><!--NÃO PRECISA COLOCAR A PASTA PUBLIC-->
-  <nav>
-  
-    <a href='/view/usuarios'> Usuário: {{usuario.[0].nome}}</a> <!--ESPECIFICA O ID DO USUÁRIO A SER EXIBIDO-->
-    
-    
-    
-  </nav>
+  <div class="bg-primary">
+    <nav class="navbar">
+      <div class="container-fluid">
+        <h1 class="navbar-brand text-light">LOCADORA DE AUTOMÓVEIS</h1>
+
+        <form class="d-flex">
+          <img src="/usuário.png" width="25" class="me-1">
+          <a class="nav-link active me-3 text-light" href='/view/usuarios'> Usuário {{usuario.[0].nome}}</a> <!--ESPECIFICA O ID DO USUÁRIO A SER EXIBIDO-->
+          <a class="nav-link active me-2 text-light" aria-current="page" href="#">Ajuda</a>
+          <a class="nav-link active me-2 text-light" aria-current="page" href="#">Sair</a>
+        </form>
+      </div>
+    </nav>
+  </div>
 </header>
