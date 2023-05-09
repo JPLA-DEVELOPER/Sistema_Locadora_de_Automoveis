@@ -7,7 +7,7 @@ module.exports = class ClienteController {
 
 //ADICIONA REGISTROS-----------------------------------------------------------------------------
   static newCliente(req, res) { //newUser, renderiza um formulário para criar um novo usuário.
-    res.render('cadastroCliente')
+    res.render('./clientes/CadastroCliente')
   }
 
   static async newClienteSave(req, res) { //newClienteSave, recebe uma requisição POST com os dados do usuário e os salva no banco de dados usando o modelo User. Se a operação de salvamento for bem-sucedida, o método redireciona o usuário para a página que exibe todos os usuários.
@@ -23,7 +23,7 @@ module.exports = class ClienteController {
       }).catch((error) => {
         console.log(error)
       })
-    res.redirect('/view/clientes')
+    res.render('./clientes/sucesso_cadastro_cliente')
 
 
   
@@ -35,7 +35,7 @@ module.exports = class ClienteController {
 
   static async allCliente(req, res) {//allUsers, recupera todos os usuários do banco de dados usando o modelo User e os renderiza em uma view.
     const cliente = await Cliente.findAll({ raw: true })
-    res.render('viewClientes', { cliente })
+    res.render('./clientes/viewClientes', { cliente })
     
     
   }
@@ -44,7 +44,7 @@ module.exports = class ClienteController {
   //ATUALIZA REGISTROS------------------------------------------------------------------
   static async updateCliente(req, res) {//updateUser, recupera um único usuário do banco de dados com base no ID fornecido, renderiza um formulário de edição e preenche o formulário com os dados do usuário.
     const cliente = await Cliente.findOne({ where: {'idCliente': req.params.idCliente}, raw: true })
-    res.render('editarCliente', { cliente })
+    res.render('./clientes/editarCliente', { cliente })
 
   }
 
@@ -58,7 +58,7 @@ module.exports = class ClienteController {
         endereco: req.body.endereco,
     }
     await Cliente.update(cliente, { where: { idCliente: idCliente } })
-      .then(res.redirect('/view/clientes'))
+      .then(res.render('./clientes/sucesso_atualizar_cliente'))
       .catch((err) => {
         console.log(err)
       })
@@ -67,7 +67,7 @@ module.exports = class ClienteController {
   //EXCLUI REGISTROS----------------------------------
   static async removeCliente(req, res) { //removeUser, recebe uma requisição POST com o ID do usuário a ser removido, exclui o usuário correspondente do banco de dados usando o modelo User e redireciona o usuário para a página que exibe todos os usuários.
     await Cliente.destroy({where: {'idCliente': req.params.idCliente}})
-      .then(res.redirect('/view/clientes'))
+      .then(res.render('./clientes/sucesso_deletar_cliente'))
       .catch((err) => {
         console.log(err)
       })

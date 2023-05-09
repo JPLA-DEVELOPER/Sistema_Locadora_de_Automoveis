@@ -21,7 +21,7 @@ module.exports = class UsuarioController {
       }).catch((error) => {
         console.log(error)
       })
-    res.redirect('/')
+      res.render('sucesso_cadastro_usuario')
 
 
   
@@ -52,7 +52,7 @@ module.exports = class UsuarioController {
       senha: req.body.senha,
     }
     await Usuario.update(usuario, { where: { id: id } })
-      .then(res.redirect('/'))
+      .then(res.render('sucesso_atualizar_usuario'))
       .catch((err) => {
         console.log(err)
       })
@@ -62,7 +62,7 @@ module.exports = class UsuarioController {
   static async removeUsuario(req, res) { //removeUser, recebe uma requisição POST com o ID do usuário a ser removido, exclui o usuário correspondente do banco de dados usando o modelo User e redireciona o usuário para a página que exibe todos os usuários.
     const id = req.body.id
     await Usuario.destroy({ where: { id: id } })
-      .then(res.redirect('/'))
+      .then(res.render('sucesso_deletar_usuario'))
       .catch((err) => {
         console.log(err)
       })
