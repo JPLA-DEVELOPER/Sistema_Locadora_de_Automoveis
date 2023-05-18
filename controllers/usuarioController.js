@@ -7,7 +7,7 @@ module.exports = class UsuarioController {
 
 //ADICIONA REGISTROS-----------------------------------------------------------------------------
   static newUsuario(req, res) { //newUser, renderiza um formulário para criar um novo usuário.
-    res.render('cadastroUsuario')
+    res.render('./usuarios/cadastroUsuario')
   }
 
   static async newUsuarioSave(req, res) { //newUserSave, recebe uma requisição POST com os dados do usuário e os salva no banco de dados usando o modelo User. Se a operação de salvamento for bem-sucedida, o método redireciona o usuário para a página que exibe todos os usuários.
@@ -21,7 +21,8 @@ module.exports = class UsuarioController {
       }).catch((error) => {
         console.log(error)
       })
-      res.render('sucesso_cadastro_usuario')
+     // res.render('sucesso_cadastro_usuario')
+
 
 
   
@@ -67,6 +68,47 @@ module.exports = class UsuarioController {
         console.log(err)
       })
   }
+
+  // LOGIN--------------------------------------------------------------
+static renderLogin(req, res) {
+  res.render('./usuarios/login');
+}
+
+static async processLogin(req, res) {
+  //const { email, senha } = req.body;
+
+  const email = req.body.email;
+  const senha = req.body.senha;
+
+  const usuario = await Usuario.findOne({ where: { email: email } });
+  if (usuario && usuario.senha === senha) {
+    req.session.loggedIn = true;
+    req.session.usuarioId = usuario.id; // Salvar o ID do usuário na sessão (opcional)
+
+    req.session.userId = usuario.id; //USUARIO LOGADO
+
+    const userId = req.session.userId;
+    const usuarioLogado = await Usuario.findOne({ where: { id: userId } });
+    res.render('pagina', { usuario: usuarioLogado });
+
+
+    res.redirect('/');
+    //res.render('home')
+    
+ 
+  } else {
+    res.send('Credenciais inválidas!');
+  }
+}
+
+// LOGOUT
+static logout(req, res) {
+  req.session.destroy(() => {
+    res.redirect('/login');
+  });
+}
+
+  
 
 
 }

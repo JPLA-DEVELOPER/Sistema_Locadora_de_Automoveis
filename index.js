@@ -4,6 +4,17 @@ const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const sequelize = require('./database/connection')
 
+//LOGIN -------------------------------------------------
+const session = require('express-session');
+const Usuario = require('./models/usuarioModel');
+
+
+app.use(session({
+    secret: 'mySecretKey',
+    resave: false,
+    saveUninitialized: false
+  }));
+//------------------------------------------------------
 // Importando rotas
 const veiculoRotas = require('./routes/veiculoRotas');
 const usuarioRotas = require('./routes/usuarioRotas');

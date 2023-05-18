@@ -22,4 +22,5 @@ const Usuario = sequelize.define('Usuario', {
   
 });
 
+
 module.exports = Usuario;

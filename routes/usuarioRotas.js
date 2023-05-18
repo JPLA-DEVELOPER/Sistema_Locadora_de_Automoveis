@@ -9,18 +9,16 @@ const UsuarioController = require('../controllers/usuarioController');
 router.get('/', UsuarioController.allUsuario)
 
 
-//ADICIONAR VEÍCULO
+//ADICIONAR USUÁRIOS
 router.get('/cadastro/usuario', UsuarioController.newUsuario)
 router.post('/cadastro/usuario', UsuarioController.newUsuarioSave)
 
 
-//ATUALIZAR VEICULO
-//router.get('/editar/veiculo/:id', VeiculoController.updateVeiculo)
-//router.post('/editar/veiculo/:id', VeiculoController.updateVeiculoSave)
+// LOGIN
+router.get('/login', UsuarioController.renderLogin);
+router.post('/login', UsuarioController.processLogin);
 
-
-//EXCLUIR VEÍCULOS
-//router.get('/excluir/veiculo/:id', VeiculoController.removeVeiculo)
-//router.post('/excluir/veiculo/:id', VeiculoController.removeVeiculo)
+// LOGOUT
+router.get('/logout', UsuarioController.logout);
 
 module.exports = router;
