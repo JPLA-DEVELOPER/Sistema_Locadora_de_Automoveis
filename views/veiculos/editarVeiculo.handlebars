@@ -9,31 +9,33 @@
     
     <div class="col-10 container w-50 justify-content-center">
       <h2>Editar Veículo</h2>
+      <br>
       <form name="formularioeditar" action="/editar/veiculo/{{veiculo.idVeiculo}}" method="post">
       <div>
           <div>
-            <label>Marca:</label>
-            <input type="text" name="marca"  value="{{ veiculo.marca }}">
+            <label class="form-label">Marca:</label>
+            <input class="form-control" type="text" name="marca"  value="{{ veiculo.marca }}">
           </div>
 
           <div>
-              <label>Modelo:</label>
-              <input type="text" name="modelo" value="{{ veiculo.modelo }}">
+            <label class="form-label">Modelo:</label>
+            <input class="form-control" type="text" name="modelo" value="{{ veiculo.modelo }}">
           </div>
 
           <div>
-              <label>Ano:</label>
-              <input type="text" name="ano" value="{{ veiculo.ano }}">
+            <label class="form-label">Ano:</label>
+            <input class="form-control" type="text" name="ano" value="{{ veiculo.ano }}">
           </div>  
 
           <div>
-              <label>Cor:</label>
-              <input type="text" name="cor" value="{{ veiculo.cor }}">
+            <label class="form-label">Cor:</label>
+            <input class="form-control" type="text" name="cor" value="{{ veiculo.cor }}">
           </div>
           <div>
-              <label>Valor Diária:</label>
-              <input type="text" name="valordiaria" value="{{ veiculo.valordiaria }}">
+            <label class="form-label">Valor Diária:</label>
+            <input class="form-control" type="text" name="valordiaria" value="{{ veiculo.valordiaria }}">
           </div>
+          <br>
         
           <div>
             <button class="btn-salvar btn btn-primary">Salvar</button>
