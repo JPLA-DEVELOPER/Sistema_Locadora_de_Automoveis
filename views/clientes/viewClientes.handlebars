@@ -7,31 +7,31 @@
     <div class="col-10">
     <h2>Lista de Clientes</h2>
 
-    <table class="table table-striped" style="background-color: #F5F8FF;">
+    <table class="table table-striped table-bordered" style="background-color: #F5F8FF;">
       <thead>
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Nome</th>
-          <th scope="col">CPF</th>
-          <th scope="col">Email</th>
-          <th scope="col">Telefone</th>
-          <th scope="col">Endereço</th>
-          <th scope="col">Ações</th>
+          <th class="text-center" scope="col">ID</th>
+          <th class="text-center" scope="col">Nome</th>
+          <th class="text-center" scope="col">CPF</th>
+          <th class="text-center" scope="col">Email</th>
+          <th class="text-center" scope="col">Telefone</th>
+          <th class="text-center" scope="col">Endereço</th>
+          <th class="text-center" scope="col">Ações</th>
         </tr>
       </thead>
 
       <tbody>
         {{#each cliente}}
           <tr>
-            <th scope="row">{{this.idCliente}}</th>
-            <td>{{this.nome}}</td>
-            <td>{{this.cpf}}</td>
-            <td>{{this.email}}</td>
-            <td>{{this.telefone}}</td>
-            <td>{{this.endereco}}</td>
+            <th class="text-center" scope="row">{{this.idCliente}}</th>
+            <td class="text-center">{{this.nome}}</td>
+            <td class="text-center">{{this.cpf}}</td>
+            <td class="text-center">{{this.email}}</td>
+            <td class="text-center">{{this.telefone}}</td>
+            <td class="text-center">{{this.endereco}}</td>
           
             <td>
-              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <div class="d-grid gap-2 d-md-flex justify-content-center">
                 <a href="/editar/cliente/{{this.idCliente}}"><button type="button" class="btn btn-outline-info btn-sm"><i class="bi bi-pen-fill"></i>Editar</button></a>
                 <a href="/excluir/cliente/{{this.idCliente}}"><button type="button" class="btn btn-outline-danger btn-sm"><i class="bi bi-person-dash"></i>Deletar</button></a>
               </div>

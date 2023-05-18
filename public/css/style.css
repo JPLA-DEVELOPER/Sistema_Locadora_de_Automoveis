@@ -1,76 +1,25 @@
-
-   
-
-#atualizar{
-    background-color: rgb(43, 221, 162);
-}
-#cadastrar{
-    background-color: rgb(43, 221, 162);
-}
-
-th, td {
-    padding: 15px;
+/*Animação feita no menu lateral*/
+.sidebar button 
+{
+    margin-left: -10px;
+    margin-right: -10px;
     text-align: left;
 }
-tr:hover {
-    background-color: #f5f5f5
-}
-th {
-    background-color: rgb(43, 221, 162);
-    color: rgb(34, 8, 8);
-   
-}
-/*
-table{
-    
-    text-align: center;
-    align-items: center;
-    font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
+.sidebar a 
+{
+    margin-left: 30px;
 }
 
+/*Diminuindo o tamanho do cabeçalho*/
+#cabecalho{
+    height: 50px;
 
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 500px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    color: #333;
-    background-color: rgb(231, 240, 235);
-}
-*/
-
-input[type="text"], input[type="number"] {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin: 5px 0;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    color: #333;
+    .container-fluid{
+        margin-top: -10px;
+    }
 }
 
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-input[type="submit"]:hover {
-    background-color: #3e8e41;
+/*Aumentando o tamanho do rodapé*/
+#rodape{
+    height: 30px;
 }

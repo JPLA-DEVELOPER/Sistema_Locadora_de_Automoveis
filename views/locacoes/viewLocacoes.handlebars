@@ -6,37 +6,37 @@
     
     <div class="col-10">
       <h2>Todas as Locações</h2>
-      <table class="table table-striped" style="background-color: #F5F8FF;">
+      <table class="table table-striped table-bordered" style="background-color: #F5F8FF;">
         <thead>
           <tr>
-            <th scope="col">ID Locação</th>
-            <th scope="col">Nome</th>
-            <th scope="col">CPF</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Modelo</th>
-            <th scope="col">Ano</th>
-            <th scope="col">Valor Diária</th>
-            <th scope="col">ClienteID</th>
-            <th scope="col">VeiculoID</th>
-            <th scope="col">Ações</th>
+            <th class="text-center" scope="col">ID Locação</th>
+            <th class="text-center" scope="col">Nome</th>
+            <th class="text-center" scope="col">CPF</th>
+            <th class="text-center" scope="col">Marca</th>
+            <th class="text-center" scope="col">Modelo</th>
+            <th class="text-center" scope="col">Ano</th>
+            <th class="text-center" scope="col">Valor Diária</th>
+            <th class="text-center" scope="col">ClienteID</th>
+            <th class="text-center" scope="col">VeiculoID</th>
+            <th class="text-center" scope="col">Ações</th>
           </tr>
         </thead>
 
         <tbody>
           {{#each locacao}}
             <tr>
-              <th scope="row">{{this.idLocacao}}</th>
-              <td>{{this.nome}}</td>
-              <td>{{this.cpf}}</td>
-              <td>{{this.marca}}</td>
-              <td>{{this.modelo}}</td>
-              <td>{{this.ano}}</td>
-              <td>{{this.valordiaria}}</td>
-              <td>{{this.idCliente}}</td>
-              <td>{{this.idVeiculo}}</td>
+              <th class="text-center" scope="row">{{this.idLocacao}}</th>
+              <td class="text-center">{{this.nome}}</td>
+              <td class="text-center">{{this.cpf}}</td>
+              <td class="text-center">{{this.marca}}</td>
+              <td class="text-center">{{this.modelo}}</td>
+              <td class="text-center">{{this.ano}}</td>
+              <td class="text-center">{{this.valordiaria}}</td>
+              <td class="text-center">{{this.idCliente}}</td>
+              <td class="text-center">{{this.idVeiculo}}</td>
 
               <td>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <div class="d-grid gap-2 d-md-flex justify-content-center">
                   <a href="/editar/locacao/{{this.idLocacao}}"><button type="button" class="btn btn-outline-info btn-sm"><i class="bi bi-pen-fill"></i>Editar</button></a>
                   <a href="/excluir/locacao/{{this.idLocacao}}"><button type="button" class="btn btn-outline-danger btn-sm"><i class="bi bi-person-dash"></i>Deletar</button></a>
                 </div>
@@ -45,7 +45,7 @@
           {{/each}}
         </tbody>
       </table>
-      <a class="btn btn-primary" href="/cadastro/locacao" role="button"><i class="bi bi-plus-circle"></i> Novo</a>
+      <a class="btn btn-primary" href="/cadastro/locacao" role="button"><i class="bi bi-basket2-fill"></i> Nova</a>
     </div>
   </div>
 </div>  

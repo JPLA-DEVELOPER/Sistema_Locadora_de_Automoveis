@@ -6,32 +6,37 @@
         
         <div class="col-10 container w-50 justify-content-center">
             <h2>Nova Locação</h2>
+            <br>
             <form action="/cadastro/locacao"  method="post">
                 <div>
                     <h1>{{locacao.dataInicio}}</h1>
 
-
                     <div>
-                        <label>CPF:</label>
-                        <input type="text" name="cpf" placeholder="Digite o cpf">
-                        <button type="button" id="buscar-cliente">Buscar</button>
-                    </div> 
-
-                    <div>
-                        <label>Placa Veículo</label>:</label>
-                        <input type="text" name="placa" placeholder="Digite a placa">
-                        <button type="button" id="buscar-cliente">Buscar</button>
-                    </div> 
-
-                    <div>
-                        <label>Data Início:</label>
-                        <input type="date" name="dataInicio">
+                        <label class="form-label">CPF:</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Digite o CPF" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+                        </div>    
                     </div>
 
                     <div>
-                        <label>Data Fim:</label>
-                        <input type="date" name="dataFim">
+                        <label class="form-label">Placa Veículo:</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Digite a placa" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+                        </div>    
                     </div>
+
+                    <div>
+                        <label class="form-label">Data Início:</label>
+                        <input class="form-control" type="date" name="dataInicio">
+                    </div>
+
+                    <div>
+                        <label class="form-label">Data Fim:</label>
+                        <input class="form-control" type="date" name="dataFim">
+                    </div>
+                    <br>
 
                     <div>
                         <button class="btn-salvar btn btn-primary">Salvar</button>
