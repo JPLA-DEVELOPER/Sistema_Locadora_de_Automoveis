@@ -4,6 +4,8 @@ const router = express.Router();
 const LocacaoController = require('../controllers/locacaoController');
 
 
+
+
 //LISTAR TODOS OS CLIENTES CADASTRADOS
 router.get('/view/locacao', LocacaoController.allLocacao)
 

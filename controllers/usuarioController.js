@@ -27,9 +27,17 @@ module.exports = class UsuarioController {
 
   
   }
-  static async home(req, res) {//home, renderiza a página inicial da aplicação.
-    res.render('home')
+  ///static async home(req, res) {//home, renderiza a página inicial da aplicação.
+
+  //  res.render('home')
+  //}
+
+  static async home(req, res) {
+    const id = req.session.id;
+    const usuarioLogado = await Usuario.findOne({ where: { id: id } });
+    res.render('home', { usuarioLogado });
   }
+  
 
   static async allUsuario(req, res) {//allUsers, recupera todos os usuários do banco de dados usando o modelo User e os renderiza em uma view.
     const usuario = await Usuario.findAll({ raw: true })
@@ -58,6 +66,7 @@ module.exports = class UsuarioController {
         console.log(err)
       })
   }
+  
 
   //EXCLUI REGISTROS----------------------------------
   static async removeUsuario(req, res) { //removeUser, recebe uma requisição POST com o ID do usuário a ser removido, exclui o usuário correspondente do banco de dados usando o modelo User e redireciona o usuário para a página que exibe todos os usuários.
@@ -84,27 +93,26 @@ static async processLogin(req, res) {
   if (usuario && usuario.senha === senha) {
     req.session.loggedIn = true;
     req.session.usuarioId = usuario.id; // Salvar o ID do usuário na sessão (opcional)
+    req.session.nomeUsuario = usuario.nome; // Armazena o nome do usuário na sessão
 
-    req.session.userId = usuario.id; //USUARIO LOGADO
+    //const userId = req.session.userId;
+   // const usuarioLogado = await Usuario.findOne({ where: { id: userId } });
+    //res.render('home', { usuario: usuarioLogado });
+    //res.render('home', { usuario: nomeUsuario });
 
-    const userId = req.session.userId;
-    const usuarioLogado = await Usuario.findOne({ where: { id: userId } });
-    res.render('pagina', { usuario: usuarioLogado });
-
-
-    res.redirect('/');
-    //res.render('home')
+    const nomeUsuario = req.session.nomeUsuario; // Obtém o nome do usuário da sessão
+    res.render('home', { nomeUsuario });
     
  
   } else {
-    res.send('Credenciais inválidas!');
+    res.send('Credenciais inválidas!')
   }
 }
 
 // LOGOUT
 static logout(req, res) {
   req.session.destroy(() => {
-    res.redirect('/login');
+    res.redirect('/');
   });
 }
 

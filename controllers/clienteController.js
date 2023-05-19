@@ -30,7 +30,7 @@ module.exports = class ClienteController {
   //EXIBE OS REGISTROS
   }
   static async home(req, res) {//home, renderiza a página inicial da aplicação.
-    res.render('viewClientes')
+    res.render('./clientes/viewClientes')
   }
 
   static async allCliente(req, res) {//allUsers, recupera todos os usuários do banco de dados usando o modelo User e os renderiza em uma view.

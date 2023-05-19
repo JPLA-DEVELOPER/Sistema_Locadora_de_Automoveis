@@ -27,12 +27,12 @@ module.exports = class VeiculoController {
 
   //EXIBE OS REGISTROS
   static async home(req, res) {//home, renderiza a página inicial da aplicação.
-    res.render('viewVeiculos')
+    res.render('./veiculos/viewVeiculos')
   }
 
   static async allVeiculos(req, res) {//allVeiculos, recupera todos os veículos do banco de dados usando o modelo Veiculo e os renderiza em uma view.
     const veiculos = await Veiculo.findAll({ raw: true })
-    res.render('./veiculos/ViewVeiculos', { veiculos })
+    res.render('./veiculos/viewVeiculos', { veiculos })
   }
 
 

@@ -6,7 +6,7 @@ const sequelize = require('./database/connection')
 
 //LOGIN -------------------------------------------------
 const session = require('express-session');
-const Usuario = require('./models/usuarioModel');
+const Usuario = require('./models/usuarioModel')
 
 
 app.use(session({
@@ -16,8 +16,8 @@ app.use(session({
   }));
 //------------------------------------------------------
 // Importando rotas
-const veiculoRotas = require('./routes/veiculoRotas');
-const usuarioRotas = require('./routes/usuarioRotas');
+const veiculoRotas = require('./routes/veiculoRotas')
+const usuarioRotas = require('./routes/usuarioRotas')
 const clienteRotas = require('./routes/clienteRotas')
 const locacaoRotas = require('./routes/locacaoRotas')
 
