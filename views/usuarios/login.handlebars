@@ -1,34 +1,22 @@
 <body>
-  <div class="bg-primary">
-    <nav class="navbar">
-      <div class="container-fluid">
-        <h1 class="navbar-brand text-light">LOCADORA DE AUTOMÓVEIS</h1>
-
-        <form class="d-flex">
-          <a class="nav-link active me-2 text-light" aria-current="page" href="#">Ajuda</a>
-          <a class="nav-link active me-2 text-light" aria-current="page" href="./usuarios/cadastroUsuario">Criar conta</a>
-        </form>
-      </div>
-    </nav>
-  </div>
 
   <div class="container w-25 my-5">
     <div class="tab-content">
       <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-        <form  action="/home" method="post">
+        <form action="/home" method="post">
           <h1 class="text-center">Iniciar sessão</h1>
           <p class="text-center">Faça o login no seu painel de administração.</p>
-  
+
           <!-- Email input -->
           <div class="form-outline mb-4">
             <label class="form-label" for="loginName">E-mail *</label>
-            <input type="email" name="email" id="loginName" class="form-control" />
+            <input type="email" name="email" id="loginName" class="form-control" required />
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
             <label class="form-label" for="loginPassword">Senha *</label>
-            <input type="password" name="senha" id="loginPassword" class="form-control" />
+            <input type="password" name="senha" id="loginPassword" class="form-control" required />
           </div>
 
           <!-- Submit button -->
@@ -43,8 +31,8 @@
 
           <div class="text-center">
             <a href="./rec_senha.html">Esqueci minha senha</a>
-          </div>  
-    
+          </div>
+
         </form>
       </div>
     </div>
