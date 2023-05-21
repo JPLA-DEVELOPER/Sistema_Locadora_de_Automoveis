@@ -5,13 +5,14 @@
         </div>
         
         <div class="col-10 container w-50 justify-content-center">
+            <br>
             <h2>Nova Locação</h2>
             <br>
             <form action="/cadastro/locacao"  method="post">
                 <div>
                     <h1>{{locacao.dataInicio}}</h1>
 
-                    <div>
+                    <div class="form-outline mb-4">
                         <label class="form-label">CPF:</label>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Digite o CPF" aria-label="Recipient's username" aria-describedby="button-addon2" required>
@@ -19,7 +20,7 @@
                         </div>    
                     </div>
 
-                    <div>
+                    <div class="form-outline mb-4">
                         <label class="form-label">Placa Veículo:</label>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Digite a placa" aria-label="Recipient's username" aria-describedby="button-addon2" required>
@@ -27,12 +28,12 @@
                         </div>    
                     </div>
 
-                    <div>
+                    <div class="form-outline mb-4">
                         <label class="form-label">Data Início:</label>
                         <input class="form-control" type="date" name="dataInicio" required>
                     </div>
 
-                    <div>
+                    <div class="form-outline mb-4">
                         <label class="form-label">Data Fim:</label>
                         <input class="form-control" type="date" name="dataFim" required>
                     </div>
@@ -41,8 +42,7 @@
                     <div>
                         <button class="btn-salvar btn btn-primary">Salvar</button>
                         <a href="/view/locacao"><button type="button" class="btn btn-secondary">Cancelar</button></a>
-                    </div>
-                
+                    </div>                
                 </div>
             </form>
         </div>

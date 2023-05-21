@@ -8,45 +8,43 @@
     </div>
     
     <div class="col-10 container w-50 justify-content-center">
+      <br>
       <h2>Novo Automóvel</h2>
       <br>
       <form action="/cadastro/veiculo" method="post">
         <div>
-          <div>
+          <div class="form-outline mb-4">
             <label class="form-label">Marca:</label>
-            <input class="form-control" type="text" name="marca"  placeholder="Digite a marca">
+            <input class="form-control" type="text" name="marca"  placeholder="Digite a marca" required>
           </div>
 
-          <div>
+          <div class="form-outline mb-4">
             <label class="form-label">Modelo:</label>
-            <input class="form-control" type="text" name="modelo" placeholder="Digite o modelo">
+            <input class="form-control" type="text" name="modelo" placeholder="Digite o modelo" required>
           </div>
 
-          <div>
+          <div class="form-outline mb-4">
             <label class="form-label">Ano:</label>
-            <input class="form-control" type="text" name="ano" placeholder="Digite o ano">
+            <input class="form-control" type="text" name="ano" placeholder="Digite o ano" required>
           </div>
 
-          <div>
+          <div class="form-outline mb-4">
             <label class="form-label">Cor:</label>
-            <input class="form-control" type="text" name="cor" placeholder="Digite a cor">
+            <input class="form-control" type="text" name="cor" placeholder="Digite a cor" required>
           </div>
 
-          <div>
+          <div class="form-outline mb-4">
             <label class="form-label">Valor Diária:</label>
-            <input class="form-control" type="text" name="valordiaria" placeholder="Digite o valorda diário do veículo">
+            <input class="form-control" type="text" name="valordiaria" placeholder="Digite o valorda diário do veículo" required>
           </div>
           <br>
 
           <div>
             <button class="btn-salvar btn btn-primary">Salvar</button>
             <a href="/view/veiculos"><button type="button" class="btn btn-secondary">Cancelar</button></a>
-          </div>
-          
+          </div>          
         </div>
       </form>
     </div>
   </div>
 </div>
-
-

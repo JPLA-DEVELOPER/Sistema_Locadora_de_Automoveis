@@ -1,46 +1,48 @@
 <!-- metodo GET e SET são responsaveis por enviar os dados do formulávio para o bachend-->
 <!-- metodo GET: envia esses dados pela url, o POST não-->
- 
+
 <div>
   <div class="row">
     <div class="col-2">
       {{> menuLateral}}
     </div>
-    
+
     <div class="col-10 container w-50 justify-content-center">
+      <br>
       <h2>Novo Cliente</h2>
       <br>
-      <form action="/cadastro/cliente" method="post">
+      <form action="/cadastro/Cliente" method="post">
         <div>
-          <div>
+          <div class="form-outline mb-4">
             <label class="form-label">Nome:</label>
-            <input class="form-control" type="text" name="nome"  placeholder="Digite seu nome">
+            <input class="form-control" type="text" name="nome" placeholder="Digite seu nome" required>
           </div>
 
-          <div>
+          <div class="form-outline mb-4">
             <label class="form-label">CPF:</label>
-            <input class="form-control" type="text" name="cpf" placeholder="Digite o seu cpf">
+            <input class="form-control" type="text" name="cpf" placeholder="Digite o seu cpf" required>
           </div>
 
-          <div>
+          <div class="form-outline mb-4">
             <label class="form-label">Email:</label>
-            <input class="form-control" type="text" name="email" placeholder="Digite o seu e-mail">
+            <input class="form-control" type="text" name="email" placeholder="Digite o seu e-mail" required>
           </div>
 
-          <div>
+          <div class="form-outline mb-4">
             <label class="form-label">Telefone:</label>
-            <input class="form-control" type="text" name="telefone" placeholder="Digite o seu telefone">
-          </div>  
-
-          <div>
-            <label class="form-label">Endereço:</label>
-            <input class="form-control" type="text" name="endereco" placeholder="Digite o seu endereço">
+            <input class="form-control" type="text" name="telefone" placeholder="Digite o seu telefone" required>
           </div>
+
+          <div class="form-outline mb-4">
+            <label class="form-label">Endereço:</label>
+            <input class="form-control" type="text" name="endereco" placeholder="Digite o seu endereço" required>
+          </div>
+
           <br>
 
           <div>
             <button class="btn-salvar btn btn-primary">Salvar</button>
-            <a href="/view/clientes"><button type="button" class="btn btn-secondary">Cancelar</button></a>
+            <a href="/view/Clientes"><button type="button" class="btn btn-secondary">Cancelar</button></a>
           </div>
 
         </div>
@@ -48,5 +50,3 @@
     </div>
   </div>
 </div>
-
-
