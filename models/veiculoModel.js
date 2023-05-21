@@ -29,6 +29,10 @@ const Veiculo = sequelize.define('Veiculo', {
     type: DataTypes.DECIMAL,
     allowNull: false
   },
+  placa: {
+    type: DataTypes.STRING,
+    allowNull: false
+  }
 
   
 });

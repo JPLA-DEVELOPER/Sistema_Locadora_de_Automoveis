@@ -19,10 +19,10 @@ const Locacao = sequelize.define('Locacao', {
 });
 
 //RELACIONAMENTOS
-Locacao.belongsTo(Cliente, { foreignKey: 'idCliente' }); // uma locação é feita por um cliente
+Locacao.belongsTo(Cliente, {as: 'Cliente', foreignKey: 'idCliente' }); // uma locação é feita por um cliente
 Cliente.hasMany(Locacao, { foreignKey: 'idCliente' }); // um cliente pode fazer várias locações
 
-Locacao.belongsTo(Veiculo, { foreignKey: 'idVeiculo' }); // uma locação é feita para um veículo
+Locacao.belongsTo(Veiculo, {as: 'Veiculo', foreignKey: 'idVeiculo' }); // uma locação é feita para um veículo
 Veiculo.hasMany(Locacao, { foreignKey: 'idVeiculo' }); // um veículo pode ser alugado várias vezes
 
 module.exports = Locacao;

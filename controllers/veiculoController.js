@@ -14,6 +14,7 @@ module.exports = class VeiculoController {
       ano: req.body.ano,
       cor:req.body.cor,
       valordiaria: req.body.valordiaria,
+      placa: req.body.placa
     }
 
     await Veiculo.create(veiculo)

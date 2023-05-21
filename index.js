@@ -43,8 +43,8 @@ app.use('/', locacaoRotas)
 
 // Sincronizando com o banco de dados e iniciando servidor
 sequelize.sync().then(() => {
-    app.listen(3000, () => {
-        console.log("Servidor rodando na URL http://localhost:3000");
+    app.listen(3001, () => {
+        console.log("Servidor rodando na URL http://localhost:3001");
     });
 }).catch(err => {
     console.log(err);

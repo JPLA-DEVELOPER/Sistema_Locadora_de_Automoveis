@@ -5,18 +5,18 @@
   <h1 class="text-center">Cadastro de Usuário</h1>
   <form action="/cadastro/usuario" method="post">
     <div class="form-outline mb-4">
-      <label>Nome:</label>
-      <input type="text" name="nome" placeholder="Digite seu nome" required>
+      <label class="form-label" for="loginName">Nome:</label>
+      <input type="text" name="nome" class="form-control" placeholder="Digite seu nome" required>
     </div>
 
     <div class="form-outline mb-4">
-      <label>Email:</label>
-      <input type="text" name="email" placeholder="Digite o seu e-mail" required>
+      <label class="form-label" for="loginName">Email:</label>
+      <input type="text" name="email" class="form-control" placeholder="Digite o seu e-mail" required>
     </div>
 
     <div class="form-outline mb-4">
-      <label>Senha:</label>
-      <input type="text" name="senha" placeholder="Digite sua senha" required>
+      <label class="form-label" for="loginPassword">Senha:</label>
+      <input type="password" name="senha" id="loginPassword" class="form-control" placeholder="Digite sua senha" required>
     </div>
 
     <br>

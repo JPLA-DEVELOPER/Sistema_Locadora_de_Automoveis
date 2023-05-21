@@ -1,5 +1,9 @@
 const Locacao = require('../models/locacaoModel');
+const Cliente = require('../models/clienteModel');
+const Veiculo = require('../models/veiculoModel')
 
+let cliente
+let veiculo
 
 module.exports = class LocacaoController {
 
@@ -15,6 +19,8 @@ module.exports = class LocacaoController {
     const locacao = {
       dataInicio: req.body.dataInicio,
       dataFim: req.body.dataFim,
+      idCliente: cliente.idCliente,
+      idVeiculo: veiculo.idVeiculo
 
     
     }
@@ -34,7 +40,10 @@ module.exports = class LocacaoController {
   }
 
   static async allLocacao(req, res) {//allLocacao, recupera todos os locacões do banco de dados usando o modelo Locacao e os renderiza em uma view.
-    const locacao = await Locacao.findAll({ raw: true })
+    const locacao = await Locacao.findAll({raw:true, nest:true, include: [{
+      association: 'Cliente'
+    }, {association: 'Veiculo'}] })
+  console.log(locacao)
     res.render('./locacoes/viewLocacoes', { locacao })
   }
 
@@ -68,5 +77,28 @@ module.exports = class LocacaoController {
       })
   }
 
+   //BUSCA REGISTROS----------------------------------
+   static async buscaCliente(req, res) { //removeUser, recebe uma requisição POST com o ID do usuário a ser removido, exclui o usuário correspondente do banco de dados usando o modelo User e redireciona o usuário para a página que exibe todos os usuários.
+    try {
+      const _cliente = await Cliente.findOne({ where: { 'cpf': req.body.cpf }, raw: true })
+      cliente = _cliente
+
+    } catch (err){
+      console.log(err)
+    }
+
+ }
+
+  //BUSCA REGISTROS----------------------------------
+  static async buscaVeiculo(req, res) { //removeUser, recebe uma requisição POST com o ID do usuário a ser removido, exclui o usuário correspondente do banco de dados usando o modelo User e redireciona o usuário para a página que exibe todos os usuários.
+    try {
+      const _veiculo = await Veiculo.findOne({ where: { 'placa': req.body.placa }, raw: true })
+      veiculo = _veiculo
+
+    } catch (err){
+      console.log(err)
+    }
+
+ }
 
 }

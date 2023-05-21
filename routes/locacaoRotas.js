@@ -23,4 +23,7 @@ router.post('/editar/locacao/:id', LocacaoController.updateLocacaoSave)
 router.get('/excluir/locacao/:id', LocacaoController.removeLocacao)
 router.post('/excluir/locacao/:id', LocacaoController.removeLocacao)
 
+router.post('/buscar/cliente', LocacaoController.buscaCliente)
+router.post('/buscar/veiculo', LocacaoController.buscaVeiculo)
+
 module.exports = router;

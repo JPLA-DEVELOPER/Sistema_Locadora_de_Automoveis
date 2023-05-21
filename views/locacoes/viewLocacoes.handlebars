@@ -26,14 +26,15 @@
           {{#each locacao}}
             <tr>
               <th class="text-center" scope="row">{{this.idLocacao}}</th>
-              <td class="text-center">{{this.nome}}</td>
-              <td class="text-center">{{this.cpf}}</td>
-              <td class="text-center">{{this.marca}}</td>
-              <td class="text-center">{{this.modelo}}</td>
-              <td class="text-center">{{this.ano}}</td>
+              <td class="text-center">{{this.Cliente.nome}}</td>
+              <td class="text-center">{{this.Cliente.cpf}}</td>
+              <td class="text-center">{{this.Veiculo.marca}}</td>
+              <td class="text-center">{{this.Veiculo.modelo}}</td>
+              <td class="text-center">{{this.Veiculo.ano}}</td>
               <td class="text-center">{{this.valordiaria}}</td>
               <td class="text-center">{{this.idCliente}}</td>
               <td class="text-center">{{this.idVeiculo}}</td>
+               <td class="text-center">{{this.cliente}}</td>
 
               <td>
                 <div class="d-grid gap-2 d-md-flex justify-content-center">
