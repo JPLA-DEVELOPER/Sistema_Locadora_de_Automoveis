@@ -1,34 +1,60 @@
 <!-- metodo GET e SET são responsaveis por enviar os dados do formulávio para o bachend-->
 <!-- metodo GET: envia esses dados pela url, o POST não-->
- 
-<h1>Cadstro de Usuário</h1>
-<form action="/cadastro/usuario" method="post">
-  <div>
-    <div>
-    <label>Nome:</label>
-    <input type="text" name="nome"  placeholder="Digite seu nome">
-  </div>
 
-<div>
-    <label>Email:</label>
-    <input type="text" name="email" placeholder="Digite o seu e-mail">
-</div>
+<body>
+  <div id="cabecalho" class="bg-primary">
+    <nav class="navbar">
+      <div class="container-fluid">
+        
+        <h1 class="navbar-brand text-light" style="margin-top: 8px;"><font size="5">LOCADORA DE AUTOMÓVEIS</font></h1>
 
-<div>
-    <label>Senha:</label>
-    <input type="text" name="senha" placeholder="Digite sua senha">
-</div>  
+        <form class="d-flex">
+          <a class="nav-link active me-2 text-light" aria-current="page" href="#">Ajuda</a>
+          <a class="nav-link active me-2 text-light" aria-current="page" href="/">Entrar</a>
+        </form>
+      </div>
+    </nav>
+  </div>  
 
-   
- <br>
- <div class="btn-salvar">
-      </a><button > <img src="/salvar.png" width="15"> Cadastrar</button>
+  <div class="container w-25 my-5" style="height: 480px;">
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+        <form action="/cadastro/usuario" method="post">
+          <h1 class="text-center">Criar uma conta</h1>
+          <p class="text-center text-primary">Comece aqui sua jornada!</p>
+          <br>
+
+          <!-- Nome input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="registerName">Nome Completo *</label>
+            <input type="text" name="nome" placeholder="Digite o seu nome" autocomplete="off" id="registerName" class="form-control" >
+          </div>
+
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="registerEmail">E-mail *</label>
+            <input type="email" name="email" placeholder="Digite o seu e-mail" autocomplete="off" id="email" onclick="erro()" class="form-control" >
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="registerPassword">Senha *</label>
+            <input type="password" name="senha" placeholder="Digite a sua senha" id="senha" class="form-control" >
+          </div>
+
+
+          <!-- Submit button -->
+          <div class="btn-salvar">
+            <button type="submit" class="btn btn-primary btn-block form-control">Cadastrar</button>
+          </div>
+          <br>
+
+          <!-- Register buttons -->
+          <div class="text-center">
+            <p>Já tem uma conta? <a href="/"><strong>Entrar</strong></a></p>
+          </div>
+        </form>
+      </div>
     </div>
-   
   </div>
-</form>
-
- 
-<a href="/"><button> <img src="/voltar.png" width="15"> Voltar</button></a>
-
-
+</body>
