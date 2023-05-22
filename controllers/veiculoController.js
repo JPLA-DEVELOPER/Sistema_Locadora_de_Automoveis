@@ -13,8 +13,9 @@ module.exports = class VeiculoController {
       modelo: req.body.modelo,
       ano: req.body.ano,
       cor:req.body.cor,
+      placa: req.body.placa,
+      renavam: req.body.renavam,
       valordiaria: req.body.valordiaria,
-      placa: req.body.placa
     }
 
     await Veiculo.create(veiculo)
@@ -50,6 +51,8 @@ module.exports = class VeiculoController {
       modelo: req.body.modelo,
       ano: req.body.ano,
       cor: req.body.cor,
+      placa: req.body.placa,
+      renavam: req.body.renavam,
       valordiaria: req.body.valordiaria,
     }
     await Veiculo.update(veiculo, { where: { idVeiculo: idVeiculo } })

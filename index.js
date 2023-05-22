@@ -5,15 +5,25 @@ const bodyParser = require('body-parser')
 const sequelize = require('./database/connection')
 
 //LOGIN -------------------------------------------------
-const session = require('express-session');
+const session = require('express-session')//SESSÕES
+const flash = require('connect-flash') //SESSÕES
 const Usuario = require('./models/usuarioModel')
 
-
+///SESSÃO
 app.use(session({
     secret: 'mySecretKey',
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: true
   }));
+
+app.use(flash())
+
+//midlleware
+
+
+
+
+
 //------------------------------------------------------
 // Importando rotas
 const veiculoRotas = require('./routes/veiculoRotas')

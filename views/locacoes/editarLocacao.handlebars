@@ -5,26 +5,26 @@
     </div>
     
     <div class="col-10 container w-50 justify-content-center">
-      <h2>Nova Locação</h2>
+      <h2>Editar Locação</h2>
 
       <br>
-      <form action="/cadastro/locacao" method="post">
+      <form action="/editar/locacao/{{locacao.idLocacao}}" method="post">
         <div>
 
             <div>
             <label class="form-label">Data Início:</label>
-            <input class="form-control" type="date" name="dataInicio">
+            <input class="form-control"  value="{{ locacao.dataInicio }}" type="date" name="dataInicio">
           </div>
 
           <div>
             <label class="form-label">Data Fim:</label>
-            <input class="form-control" type="date" name="dataFim">
+            <input class="form-control" value="{{ locacao.dataFim }}" type="date" name="dataFim">
           </div>
 
           <div>
             <label class="form-label">CPF Cliente:</label>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Digite o CPF" name="cpf" id="campo-cliente" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <input type="text" class="form-control" value="{{ locacao.cpf }}" name="cpf" id="campo-cliente" aria-label="Recipient's username" aria-describedby="button-addon2">
               <button class="btn btn-outline-secondary" type="button"  id="botao-buscar-cliente">Buscar Cliente</button>
             </div>    
           </div>
@@ -33,13 +33,13 @@
 
           <div>
             <label class="form-label">Nome do Cliente:</label>
-            <input class="form-control" type="text" name="nome" id="nome-cliente" readonly>
+            <input class="form-control" type="text"  value="{{ locacao.nome }}" name="nome" id="nome-cliente" readonly>
           </div>
 
           <div>
             <label class="form-label">Placa Veículo:</label>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Digite a placa" name="placa" id="campo-veiculo" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <input type="text" class="form-control" value="{{ locacao.placa }}" name="placa" id="campo-veiculo" aria-label="Recipient's username" aria-describedby="button-addon2">
               <button class="btn btn-outline-secondary" type="button"  id="botao-buscar-veiculo">Buscar Veículo</button>
             </div>    
           </div>
@@ -49,41 +49,38 @@
         
           <div>
             <label class="form-label">Marca:</label>
-            <input type="text" class="form-control" name="marca" id="campo-marca" readonly>
+            <input type="text" class="form-control" value="{{ locacao.marca }}" name="marca" id="campo-marca" readonly>
           </div>
 
           <div>
             <label class="form-label">Modelo:</label>
-            <input type="text" class="form-control" name="modelo" id="campo-modelo" readonly>
+            <input type="text" class="form-control" value="{{ locacao.modelo }}" name="modelo" id="campo-modelo" readonly>
           </div>
 
           <div>
             <label class="form-label">Cor:</label>
-            <input type="text" class="form-control" name="cor" id="campo-cor" readonly>
+            <input type="text" class="form-control" value="{{ locacao.cor }}" name="cor" id="campo-cor" readonly>
           </div>
 
           <div>
             <label class="form-label">Renavam:</label>
-            <input type="text" class="form-control" name="renavam" id="campo-renavam" readonly>
+            <input type="text" class="form-control"  value="{{ locacao.renavam }}" name="renavam" id="campo-renavam" readonly>
           </div>
-
-
-          <br>
 
           
           <div>
             <label class="form-label">Valor Diária:</label>
-            <input class="form-control" type="text" name="valorDiaria" id="campo-valor-diaria" readonly>
+            <input class="form-control" type="text" value="{{ locacao.valorDiaria }}" name="valorDiaria" id="campo-valor-diaria" readonly>
           </div>
 
           <div>
             <label class="form-label">Quantidade de Diárias:</label>
-            <input class="form-control" type="text" name="quantidadeDiarias" id="campo-total-diarias" readonly>
+            <input class="form-control" type="text" value="{{ locacao.quantidadeDiarias }}"  name="quantidadeDiarias" id="campo-total-diarias" readonly>
           </div>
 
           <div>
             <label class="form-label">Valor Total:</label>
-            <input class="form-control" type="number" name="valorTotal" id="campo-valor-total" readonly>
+            <input class="form-control" type="number" value="{{ locacao.valorTotal }}" name="valorTotal" id="campo-valor-total" readonly>
           </div>
 
           <div>

@@ -1,0 +1,35 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<div>
+  <div class="row">
+    <div class="col-2" >
+     
+    </div>
+    
+    <div class="col-10" style="font-size:small">
+      <h2>Detalhes da Locação Número {{locacao.idLocacao}}:</h2><br><br>
+      
+      <h6> ID da Locação: {{locacao.idLocacao}}</h6>
+      <h6>-----------------------------------------------------------------------------------------------</h6>
+      <h6>Nome do Cliente: {{locacao.nome}} </h6>
+      <h6>CPF do Cliente: {{locacao.cpf}}</h6>
+      <h6>-----------------------------------------------------------------------------------------------</h6>
+      <h6>Placa do Veículo: {{locacao.placa}}</h6>
+      <h6>Marca do Veiculo: {{locacao.marca}}</h6>
+      <h6>Modelo do Veículo: {{locacao.modelo}}</h6>
+      <h6>Cor do Veículo: {{locacao.cor}}</h6>
+      <h6>Renavam: {{locacao.renavam}}</h6>
+      <h6>-----------------------------------------------------------------------------------------------</h6>
+      <h6>Data de Início: {{moment locacao.dataInicio 'DD/MM/YYYY'}}</h6>
+      <h6>Data Final: {{moment locacao.dataFim 'DD/MM/YYYY'}}</h6>
+      <h6>Quantidade de Diárias: {{locacao.quantidadeDiarias}}</h6>
+      <h6>Valor da Diária do Veículo: R$ {{locacao.valorDiaria}}</h6>
+      <h6>------------------------------------------------------------------------------------------------</h6>
+      <h6>Valor Total da Locação: R$ {{locacao.valorTotal}}</h6>
+
+      <hr> 
+      <a class="btn btn-primary" href="/view/locacao" role="button"><i class="bi bi-basket2-fill"></i> Voltar</a>
+      <a class="btn btn-primary" href="/cadastro/locacao" role="button" onclick="window.print()"><i class="bi bi-basket2-fill"></i> Imprimir</a>
+    </div>
+  </div>
+</div>

@@ -12,7 +12,7 @@ const Cliente = sequelize.define('Cliente', {
     allowNull: false
   },
   cpf: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: false
   },
   email: {

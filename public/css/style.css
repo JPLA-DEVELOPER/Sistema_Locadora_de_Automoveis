@@ -10,30 +10,16 @@
     margin-left: 30px;
 }
 
-/* Formatando rodapé */
-.footer{
-    position: fixed;
-    bottom: 0;
-    background-color: #0D6EFD;
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
+/*Diminuindo o tamanho do cabeçalho*/
+#cabecalho{
+    height: 50px;
+
+    .container-fluid{
+        margin-top: -10px;
+    }
 }
 
-.button-container{
-    display: flex;
-    justify-content: center;
-}
-
-.custom-btn{
-    flex: 1;
-    margin-right: 10px;
-}
-
-.col{
-    display: flex;
-}
-
-.card{
-    flex: 1;
+/*Aumentando o tamanho do rodapé*/
+#rodape{
+    height: 30px;
 }

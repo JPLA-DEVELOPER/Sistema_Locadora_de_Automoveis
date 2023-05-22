@@ -18,10 +18,10 @@ module.exports = class UsuarioController {
     }
     await Usuario.create(usuario)
       .then(() => {
-        res.render('./usuarios/sucesso_cadastro_usuario')
       }).catch((error) => {
         console.log(error)
       })
+     // res.render('sucesso_cadastro_usuario')
 
 
 

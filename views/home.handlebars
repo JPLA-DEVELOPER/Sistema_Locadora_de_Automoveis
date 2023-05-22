@@ -1,142 +1,25 @@
-<div class="row">
-    <div class="col-2">
-        {{> menuLateral}}
-    </div>
+<div>
+    <div class="row">
+        <div class="col-2">
+            {{> menuLateral}}
+        </div>
 
-    <div class="col-10">
-        <div class="col">
-
-            <div class="card" style="width: 18rem;"> {{!--carro 1--}}
-                <img src="carro1.png" class="card-img-top">
-
-                <div class="card-body">
-                    <p class="card-title">Marca: Ford</p>
-                    <p class="card-text">Modelo: Mustang GT</p>
-                    <p class="card-text">Ano: 2022</p>
-                    <p class="card-text">Cor: Vermelho</p>
-                    <p class="card-text">Valor da Diária: </p>
-                    <a href="/cadastro/locacao" class="btn btn-primary d-md-flex justify-content-center">Alugar</a>
+        <div class="col-10">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="logo.png" class="card-img-top">
+                   
+                 
+                    <div class="card-body">
+                        <p class="card-title">Marca</p>
+                        <p class="card-text">Modelo</p>
+                        <p class="card-text">Ano</p>
+                        <p class="card-text">Cor</p>
+                        <p class="card-text">Valor da Diária</p>
+                        <a href="/cadastro/locacao" class="btn btn-primary d-md-flex justify-content-center">Alugar</a>
+                    </div>
                 </div>
             </div>
-            <div class="card" style="width: 18rem;"> {{!--carro 2--}}
-                <img src="carro2.png" class="card-img-top">
-
-
-                <div class="card-body">
-                    <p class="card-title">Marca: Toyota</p>
-                    <p class="card-text">Modelo: Camry LE</p>
-                    <p class="card-text">Ano: 2021</p>
-                    <p class="card-text">Cor: Prata</p>
-                    <p class="card-text">Valor da Diária: </p>
-                    <a href="/cadastro/locacao" class="btn btn-primary d-md-flex justify-content-center">Alugar</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;"> {{!--carro 3--}}
-                <img src="carro3.png" class="card-img-top">
-
-
-                <div class="card-body">
-                    <p class="card-title">Marca: Chevrolet</p>
-                    <p class="card-text">Modelo: Silverado 1500 LTZ</p>
-                    <p class="card-text">Ano: 2020</p>
-                    <p class="card-text">Cor: Preto</p>
-                    <p class="card-text">Valor da Diária: </p>
-                    <a href="/cadastro/locacao" class="btn btn-primary d-md-flex justify-content-center">Alugar</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;"> {{!--carro 4--}}
-                <img src="carro4.png" class="card-img-top">
-
-
-                <div class="card-body">
-                    <p class="card-title">Marca: Honda</p>
-                    <p class="card-text">Modelo: Civic LX</p>
-                    <p class="card-text">Ano: 2019</p>
-                    <p class="card-text">Cor: Azul</p>
-                    <p class="card-text">Valor da Diária: </p>
-                    <a href="/cadastro/locacao" class="btn btn-primary d-md-flex justify-content-center">Alugar</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;"> {{!--carro 5--}}
-                <img src="carro5.png" class="card-img-top">
-
-
-                <div class="card-body">
-                    <p class="card-title">Marca: BMW</p>
-                    <p class="card-text">Modelo: X5 xDrive40i</p>
-                    <p class="card-text">Ano: 2018</p>
-                    <p class="card-text">Cor: Branco</p>
-                    <p class="card-text">Valor da Diária: </p>
-                    <a href="/cadastro/locacao" class="btn btn-primary d-md-flex justify-content-center">Alugar</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;"> {{!--carro 6--}}
-                <img src="carro6.png" class="card-img-top">
-
-
-                <div class="card-body">
-                    <p class="card-title">Marca: Mercedes-Benz</p>
-                    <p class="card-text">Modelo: C300</p>
-                    <p class="card-text">Ano: 2017</p>
-                    <p class="card-text">Cor: Cinza</p>
-                    <p class="card-text">Valor da Diária: </p>
-                    <a href="/cadastro/locacao" class="btn btn-primary d-md-flex justify-content-center">Alugar</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;"> {{!--carro 7--}}
-                <img src="carro7.png" class="card-img-top">
-
-
-                <div class="card-body">
-                    <p class="card-title">Marca: Volkswagen</p>
-                    <p class="card-text">Modelo: Golf GTI</p>
-                    <p class="card-text">Ano: 2016</p>
-                    <p class="card-text">Cor: Vermelho</p>
-                    <p class="card-text">Valor da Diária: </p>
-                    <a href="/cadastro/locacao" class="btn btn-primary d-md-flex justify-content-center">Alugar</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;"> {{!--carro 8--}}
-                <img src="carro8.png" class="card-img-top">
-
-
-                <div class="card-body">
-                    <p class="card-title">Marca: Audi</p>
-                    <p class="card-text">Modelo: A4 Premium Plus</p>
-                    <p class="card-text">Ano: 2015</p>
-                    <p class="card-text">Cor: Preto</p>
-                    <p class="card-text">Valor da Diária: </p>
-                    <a href="/cadastro/locacao" class="btn btn-primary d-md-flex justify-content-center">Alugar</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;"> {{!--carro 9--}}
-                <img src="carro9.png" class="card-img-top">
-
-
-                <div class="card-body">
-                    <p class="card-title">Marca: Nissan</p>
-                    <p class="card-text">Modelo: Rogue SV</p>
-                    <p class="card-text">Ano: 2014</p>
-                    <p class="card-text">Cor: Prata</p>
-                    <p class="card-text">Valor da Diária: </p>
-                    <a href="/cadastro/locacao" class="btn btn-primary d-md-flex justify-content-center">Alugar</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;"> {{!--carro 10--}}
-                <img src="carro10.png" class="card-img-top">
-
-                <div class="card-body">
-                    <p class="card-title">Marca: Jeep</p>
-                    <p class="card-text">Modelo: Wrangler Sport</p>
-                    <p class="card-text">Ano: 2013</p>
-                    <p class="card-text">Cor: Verde</p>
-                    <p class="card-text">Valor da Diária: </p>
-                    <a href="/cadastro/locacao" class="btn btn-primary d-md-flex justify-content-center">Alugar</a>
-                </div>
-            </div>
-
-
         </div>
     </div>
 </div>

@@ -1,16 +1,14 @@
 
-<header class="header">
-  <div class="bg-primary">
+<header>
+  <div id="cabecalho" class="bg-primary">
     <nav class="navbar">
       <div class="container-fluid">
         
         <h1 class="navbar-brand text-light" style="margin-top: 8px;"><font size="5">LOCADORA DE AUTOMÓVEIS</font></h1>
 
         <form class="d-flex">
-          <img src="/usuario.png" width="25" class="me-1">
-          <a class="nav-link active me-3 text-light" href='/view/usuarios'>
-            {{usuarioLogado.nome}}
-           </a> <!--ESPECIFICA O ID DO USUÁRIO A SER EXIBIDO-->
+          <img src="/usuário.png" width="25" class="me-1">
+          <a class="nav-link active me-3 text-light" href='/view/usuarios'><%=usuarioLogado.nome%> </a> <!--ESPECIFICA O ID DO USUÁRIO A SER EXIBIDO-->
           <a class="nav-link active me-2 text-light" aria-current="page" href="#">Ajuda</a>
           <a class="nav-link active me-2 text-light" aria-current="page" href="/">Sair</a>
         </form>
