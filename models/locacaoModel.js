@@ -15,7 +15,7 @@ const Locacao = sequelize.define('Locacao', {
     allowNull: false
   },
   cpf: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: false
   },
   placa: {
