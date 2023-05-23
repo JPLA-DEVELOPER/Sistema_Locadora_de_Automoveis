@@ -32,6 +32,13 @@ module.exports = class UsuarioController {
   //  res.render('home')
   //}
 
+
+  
+  static async viewUsuario(req, res) {
+    res.render('./usuarios/viewUsuario');
+  }
+
+  //
   static async home(req, res) {
     const id = req.session.id;
     const usuarioLogado = await Usuario.findOne({ where: { id: id } });

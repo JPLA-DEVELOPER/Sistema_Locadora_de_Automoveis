@@ -4,6 +4,8 @@ const router = express.Router();
 
 const UsuarioController = require('../controllers/usuarioController');
 
+//ROTA VISUALIZAR USUARIO
+router.get('/view/usuario', UsuarioController.viewUsuario)
 
 //LISTAR TODOS OS USUÁRIOS CADASTRADOS
 router.get('/home', UsuarioController.home)
