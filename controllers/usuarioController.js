@@ -21,7 +21,7 @@ module.exports = class UsuarioController {
       }).catch((error) => {
         console.log(error)
       })
-     // res.render('sucesso_cadastro_usuario')
+    res.render('./usuarios/sucesso_cadastro_usuario')
 
 
 
@@ -82,6 +82,20 @@ module.exports = class UsuarioController {
 static renderLogin(req, res) {
   res.render('./usuarios/login');
 }
+
+static async login_post(req, res){
+  const {email, senha} = req.body;
+  const user = await Usuario.findOne({where:{email, senha}});
+  if(!user){
+    console.log("Usuario não encontrado")
+    res.redirect('/')
+  }else{
+    console.log("Usuario encontrado")
+    res.redirect('/home')
+  }
+  console.log(email, senha)
+}
+
 
 static async processLogin(req, res) {
   //const { email, senha } = req.body;

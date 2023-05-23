@@ -5,10 +5,11 @@ const router = express.Router();
 const UsuarioController = require('../controllers/usuarioController');
 
 
-
 //LISTAR TODOS OS USUÁRIOS CADASTRADOS
 router.get('/home', UsuarioController.home)
 router.post('/home', UsuarioController.home)
+
+router.post('/loginpost', UsuarioController.login_post)
 
 
 

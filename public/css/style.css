@@ -23,3 +23,7 @@
 #rodape{
     height: 30px;
 }
+
+.justificado {
+    text-align: justify;
+}  

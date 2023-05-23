@@ -8,53 +8,68 @@
       {{> menuLateral}}
     </div>
     
-    <div class="col-10 container w-50 justify-content-center">
+    <div class="col align-self-center mx-auto" style="background-color: #F5F8FF;">
       <h2>Editar Veículo</h2>
       <br>
+      
       <form name="formularioeditar" action="/editar/veiculo/{{veiculo.idVeiculo}}" method="post">
-      <div>
-          <div>
-            <label class="form-label">Marca:</label>
-            <input class="form-control" type="text" name="marca"  value="{{ veiculo.marca }}">
-          </div>
+        <div class="container-fluid"> 
+          <div class="row">
+            <div class="col-6">
+              <div>
+                <label class="form-label">Marca:</label>
+                <input class="form-control" type="text" name="marca"  value="{{ veiculo.marca }}">
+              </div>
 
-          <div>
-            <label class="form-label">Modelo:</label>
-            <input class="form-control" type="text" name="modelo" value="{{ veiculo.modelo }}">
-          </div>
+              <div>
+                <label class="form-label">Modelo:</label>
+                <input class="form-control" type="text" name="modelo" value="{{ veiculo.modelo }}">
+              </div>
 
-          <div>
-            <label class="form-label">Ano:</label>
-            <input class="form-control" type="text" name="ano" value="{{ veiculo.ano }}">
-          </div>  
+              <div>
+                <label class="form-label">Ano:</label>
+                <input class="form-control" type="text" name="ano" value="{{ veiculo.ano }}">
+              </div>  
 
-          <div>
-            <label class="form-label">Cor:</label>
-            <input class="form-control" type="text" name="cor" value="{{ veiculo.cor }}">
-          </div>
+              <div>
+                <label class="form-label">Cor:</label>
+                <input class="form-control" type="text" name="cor" value="{{ veiculo.cor }}">
+              </div>
+              <br>
+            </div>
 
-          <div>
-            <label class="form-label">Placa:</label>
-            <input class="form-control" type="text" name="placa" value="{{ veiculo.placa }}">
-          </div>
+            <div class="col-6">
+              <div>
+                <label class="form-label">Placa:</label>
+                <input class="form-control" type="text" name="placa" value="{{ veiculo.placa }}">
+              </div>
 
-          <div>
-            <label class="form-label">Renavam:</label>
-            <input class="form-control" type="text" name="renavam" value="{{ veiculo.renavam }}">
-          </div>
-          <div>
-            <label class="form-label">Valor Diária:</label>
-            <input class="form-control" type="text" name="valordiaria" value="{{ veiculo.valordiaria }}">
-          </div>
-          <br>
-        
-          <div>
-            <button class="btn-salvar btn btn-primary">Salvar</button>
-            <a href="/view/veiculos"><button type="button" class="btn btn-secondary">Cancelar</button></a>
-          </div>
+              <div>
+                <label class="form-label">Renavam:</label>
+                <input class="form-control" type="text" name="renavam" value="{{ veiculo.renavam }}">
+              </div>
+              
+              <div>
+                <label class="form-label">Valor Diária:</label>
+                <input class="form-control" type="text" name="valordiaria" value="{{ veiculo.valordiaria }}">
+              </div>
 
+            </div>
+          </div>
         </div>
+
+        <div>
+          <button class="btn-salvar btn btn-primary"><i class="bi bi-file-earmark-check"></i> Salvar</button>
+          <a href="/view/veiculos"><button type="button" class="btn btn-secondary"><i class="bi bi-file-earmark-excel"></i> Cancelar</button></a>
+        </div>
+        <br>
       </form>
-     </div>
+    </div>
+
+    <div class="col align-self-center mx-auto text-center">
+      <div class="text-center">
+        <img src="/veiculo.jpg" class="rounded" width="600" class="me-1">
+      </div>
+    </div>
   </div>
 </div>

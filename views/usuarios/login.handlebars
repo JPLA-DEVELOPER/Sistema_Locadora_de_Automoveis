@@ -13,38 +13,53 @@
     </nav>
   </div>  
 
-  <div class="container w-25 my-5" style="height: 480px;">
-    <div class="tab-content">
-      <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-        <form  action="/home" method="post">
-          <h1 class="text-center">Iniciar sessão</h1>
-          <p class="text-center text-primary">Faça o login no seu painel de administração.</p>
-          <br>
-  
-          <!-- Email input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="loginName">E-mail *</label>
-            <input type="email" name="email" id="loginName" class="form-control" />
-          </div>
+  <div class="container"> 
+    <div class="row">
+      <div class="col-1">
 
-          <!-- Password input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="loginPassword">Senha *</label>
-            <input type="password" name="senha" id="loginPassword" class="form-control" />
-          </div>
-
-          <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-block form-control">Entrar</button>
-          <br>
-          <br>
-
-          <!-- Register buttons -->
-          <div class="text-center">
-            <p>Ainda não tem uma conta? <a href="/cadastro/usuario"><strong>Criar conta</strong></a></p>
-          </div>
-    
-        </form>
       </div>
+
+      <div class="col align-self-center mx-auto">
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+            <form  action="/loginpost" method="post">
+              <h1 class="text-center">Iniciar sessão</h1>
+              <p class="text-center text-primary">Faça o login no seu painel de administração.</p>
+              <br>
+      
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="loginName">E-mail *</label>
+                <input type="email" name="email" id="loginName" class="form-control" />
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="loginPassword">Senha *</label>
+                <input type="password" name="senha" id="loginPassword" class="form-control" />
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block form-control">Entrar</button>
+              <br>
+              <br>
+
+              <!-- Register buttons -->
+              <div class="text-center">
+                <p>Ainda não tem uma conta? <a href="/cadastro/usuario"><strong>Criar conta</strong></a></p>
+              </div>
+        
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col align-self-center mx-auto text-center">
+        <div class="text-center">
+          <img src="/login.jpg" class="rounded" width="577" class="me-1">
+        </div>
+      </div>
+
     </div>
   </div>
 </body>

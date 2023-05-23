@@ -4,12 +4,11 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-2" >
-     
+    <div class="col-3" >
     </div>
     
-    <div class="col-10" style="font-size:small">
-      <h2>Detalhes da Locação Número {{locacao.idLocacao}}:</h2><br><br>
+    <div class="col-6 align-self-center mx-auto text-left" style="font-size:small; height: 577px;background-color: #F5F8FF;">
+      <h3 class="text-center">Detalhes da Locação Número {{locacao.idLocacao}}:</h3>
       
       <h6> ID da Locação: {{locacao.idLocacao}}</h6>
       <h6>-----------------------------------------------------------------------------------------------</h6>
@@ -29,9 +28,17 @@
       <h6>------------------------------------------------------------------------------------------------</h6>
       <h6>Valor Total da Locação: R$ {{locacao.valorTotal}}</h6>
 
-      <hr> 
-      <a class="btn btn-primary" href="/view/locacao" role="button"><i class="bi bi-basket2-fill"></i> Voltar</a>
-      <a class="btn btn-primary" href="/cadastro/locacao" role="button" onclick="window.print()"><i class="bi bi-basket2-fill"></i> Imprimir</a>
+      <hr>
+      <div class="text-center">
+        <a class="btn btn-primary" href="/cadastro/locacao" role="button" onclick="window.print()"><i class="bi bi-printer-fill"></i> Imprimir</a>
+        <a class="btn btn-secondary" href="/view/locacao" role="button"><i class="bi bi-backspace-fill"></i> Voltar</a>
+        <br>
+        <br>
+      </div>
+      
+    </div>
+
+    <div class="col-3" >
     </div>
   </div>
 </div>

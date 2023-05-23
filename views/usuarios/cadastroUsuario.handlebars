@@ -16,45 +16,60 @@
     </nav>
   </div>  
 
-  <div class="container w-25 my-5" style="height: 480px;">
-    <div class="tab-content">
-      <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-        <form action="/cadastro/usuario" method="post">
-          <h1 class="text-center">Criar uma conta</h1>
-          <p class="text-center text-primary">Comece aqui sua jornada!</p>
-          <br>
-
-          <!-- Nome input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="registerName">Nome Completo *</label>
-            <input type="text" name="nome" placeholder="Digite o seu nome" autocomplete="off" id="registerName" class="form-control" >
-          </div>
-
-          <!-- Email input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="registerEmail">E-mail *</label>
-            <input type="email" name="email" placeholder="Digite o seu e-mail" autocomplete="off" id="email" onclick="erro()" class="form-control" >
-          </div>
-
-          <!-- Password input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="registerPassword">Senha *</label>
-            <input type="password" name="senha" placeholder="Digite a sua senha" id="senha" class="form-control" >
-          </div>
-
-
-          <!-- Submit button -->
-          <div class="btn-salvar">
-            <button type="submit" class="btn btn-primary btn-block form-control">Cadastrar</button>
-          </div>
-          <br>
-
-          <!-- Register buttons -->
-          <div class="text-center">
-            <p>Já tem uma conta? <a href="/"><strong>Entrar</strong></a></p>
-          </div>
-        </form>
+  <div class="container"> 
+    <div class="row">
+      <div class="col-1">
       </div>
+
+      <div class="col align-self-center mx-auto">
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+            <form action="/cadastro/usuario" method="post">
+              <h1 class="text-center">Criar uma conta</h1>
+              <p class="text-center text-primary">Comece aqui sua jornada!</p>
+              <br>
+
+              <!-- Nome input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="registerName">Nome Completo *</label>
+                <input class="form-control" type="text" name="nome" placeholder="Digite o seu nome" autocomplete="off" id="registerName" class="form-control" >
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="registerEmail">E-mail *</label>
+                <input class="form-control" type="email" name="email" placeholder="Digite o seu e-mail" autocomplete="off" id="email" onclick="erro()" class="form-control" >
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="registerPassword">Senha *</label>
+                <input class="form-control" type="password" name="senha" placeholder="Digite a sua senha" id="senha" class="form-control" >
+              </div>
+
+
+              <!-- Submit button -->
+              <div>
+                <button type="submit" class="btn-salvar btn btn-primary btn-block form-control">Cadastrar</button>
+              </div>
+              <br>
+
+              <!-- Register buttons -->
+              <div class="text-center">
+                <p>Já tem uma conta? <a href="/"><strong>Entrar</strong></a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col align-self-center mx-auto text-center">
+        <div class="text-center">
+          <img src="/registre.jpg" class="rounded" width="577" class="me-1">
+        </div>
+      </div>
+
     </div>
   </div>
+
 </body>

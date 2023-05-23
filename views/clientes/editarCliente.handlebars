@@ -8,9 +8,10 @@
       {{> menuLateral}}
     </div>
     
-    <div class="col-10 container w-50 justify-content-center">
+    <div class="col align-self-center mx-auto" style="background-color: #F5F8FF;">
       <h2>Editar Cliente</h2>
       <br>
+      
       <form name="formularioeditar" action="/editar/cliente/{{cliente.idCliente}}" method="post">
         <div>
           <div>
@@ -35,14 +36,22 @@
             <label class="form-label">Endereço:</label>
             <input class="form-control" type="text" name="endereço" value="{{ cliente.endereco}}">
           </div>
-          <br><br>
+          <br>
 
           <div class="btn-salvar">
-            <button class="btn-salvar btn btn-primary">Salvar</button>
-            <a href="/view/clientes"><button type="button" class="btn btn-secondary">Cancelar</button></a>
+            <button class="btn-salvar btn btn-primary"><i class="bi bi-file-earmark-check"></i> Salvar</button>
+            <a href="/view/clientes"><button type="button" class="btn btn-secondary"><i class="bi bi-file-earmark-excel"></i> Cancelar</button></a>
           </div>
+          <br>
         </div>
       </form>
     </div>
+
+    <div class="col align-self-center mx-auto text-center">
+      <div class="text-center">
+        <img src="/cliente.jpg" class="rounded" width="600" class="me-1">
+      </div>
+    </div>
+
   </div>
 </div>
