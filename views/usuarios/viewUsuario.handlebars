@@ -1,1 +1,41 @@
-<h1>Esta é a tela da conta do usuário</h1>
+{{> header}}
+
+<div class="container-fluid">
+  <div class="row">
+        <div class="col-2">
+            {{> menuLateral}}
+        </div>
+
+        <div class="col-2">
+        </div>
+        
+        <div class="col-6">
+            <br>
+            <h3>Olá, Usuário XXXX</h3>
+            <br>
+
+            <div class="container p-2" style="background-color: #F5F8FF;">
+                <h4>Perfil:</h4>
+                <h5><img src="/usuário.png" class="rounded" width="50"> Usuário XXXX</h5>
+            </div>
+            <br>
+
+            <div class="container p-2" style="background-color: #F5F8FF;">
+                <h4>Segurança:</h4>
+                <h5>Mude a senha de sua conta frequentemente para evitar acesso não autorizado.</h5>
+            </div>
+            <br>
+
+            <div class="container p-2" style="background-color: #F5F8FF;">
+                <h4>E-mail de acesso:</h4>
+                <h5>fulanodetal@gmail.com</h5>
+            </div>
+            <br>
+            <div class="text-left">
+                <a href="#"><button type="button" class="btn btn-primary"><i class="bi bi-pen"></i> Editar dados da conta</button></a>
+            </div>
+            
+        </div>
+      
+  </div>
+</div>
