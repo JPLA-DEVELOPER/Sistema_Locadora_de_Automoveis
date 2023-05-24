@@ -55,7 +55,12 @@ const Locacao = sequelize.define('Locacao', {
   valorTotal: {
     type: DataTypes.FLOAT, // ou outro tipo adequado, dependendo do formato do valor
     allowNull: false
+  },
+  status: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: true // Define o valor padrão como true (veículo disponível)
   }
+  
 });
 
 

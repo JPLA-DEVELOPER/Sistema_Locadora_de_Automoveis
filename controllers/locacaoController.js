@@ -138,6 +138,21 @@ module.exports = class LocacaoController {
     const placa = req.params.placa;
   
     try {
+      // Verificar se o veículo está alocado
+      const locacao = await Locacao.findOne({
+        where: {
+        placa: placa,
+        status: true // Verificar apenas alocacoes com status true (veículo disponível)
+      }
+    });
+
+    if (locacao) {
+    // Veículo já está alocado, exibir mensagem de erro
+    return res.json({ alocado: true });
+   
+
+    }
+
       const veiculo = await Veiculo.findOne({
         where: { placa },
         attributes: ['idVeiculo', 'marca', 'modelo', 'cor', 'renavam', 'valordiaria'] // Atributos a serem retornados na resposta
@@ -151,11 +166,6 @@ module.exports = class LocacaoController {
   }
   
 
-  
-
-
-
-  
   
 
 

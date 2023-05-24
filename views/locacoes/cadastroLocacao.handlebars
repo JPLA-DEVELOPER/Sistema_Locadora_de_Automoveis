@@ -47,6 +47,8 @@
               </div>
               
               <div id="erro-veiculo" style="color: red; display: none;">Esse veículo não existe! Tente novamente!</div>
+              <div id="mensagem-erro" style="display: none; color: red;">Esse veículo já está alocado! Tente outro veículo!</div>
+
 
             
               <div>
@@ -117,88 +119,88 @@
 
 <script>
     //BUSCAR CLIENTE PELO CPF
-  $(document).ready(function() {
-    $('#botao-buscar-cliente').click(function() {
-      const cpf = $('#campo-cliente').val();
-      
-      if (cpf) {
-        $.ajax({
-          url: '/buscar-cliente/' + cpf,
-          method: 'GET',
-          dataType: 'json',
-          success: function(data) {
-            if (data) {
-              const nomeCliente = data.nome; // Nome do cliente retornado pelo servidor
-              $('#nome-cliente').val(nomeCliente); // Preenche o valor do campo de nome do cliente
-            } else {
-              $('#erro-cliente').show(); // Exibe a mensagem de erro
-              
-              // Limpa o campo após 3 segundos
-            setTimeout(function() {
-                $('#campo-cliente').val(''); // Limpa o campo cpf novamente
-                $('#erro-cliente').hide(); // Oculta a mensagem de erro
-            }, 3000); // Tempo em milissegundos (3 segundos)
-            }
-          
-          },
-          error: function(xhr, status, error) {
-            console.error(error);
-            
-          }
-        });
-      }
-    });
+ $(document).ready(function() {
+  $('#botao-buscar-cliente').click(function() {
+    const cpf = $('#campo-cliente').val();
     
-    
-
-//BUSCAR VEÍCULO PELA PLACA
-    $('#botao-buscar-veiculo').click(function() {
-  const placa = $('#campo-veiculo').val();
-  
-  if (placa) {
-    $.ajax({
-      url: '/buscar-veiculo/' + placa,
-      method: 'GET',
-      dataType: 'json',
-      success: function(data) {
-        if (data) {
-          const { marca, modelo, cor, renavam, valordiaria } = data; // Campos retornados pelo servidor
-          $('#campo-marca').val(marca); // Preenche o campo marca com o valor retornado
-          $('#campo-modelo').val(modelo); // Preenche o campo modelo com o valor retornado
-          $('#campo-cor').val(cor); // Preenche o campo cor com o valor retornado
-          $('#campo-renavam').val(renavam); // Preenche o campo renavam com o valor retornado
-          $('#campo-valor-diaria').val(valordiaria); // Preenche o campo valor da diária
-
-
-//CALCULA O VALOR TOTAL DA LOCAÇÃO   
-          
-          const dataInicio = $('[name="dataInicio"]').val();
-          const dataFim = $('[name="dataFim"]').val();
-          const diffTime = Math.abs(new Date(dataFim) - new Date(dataInicio));
-          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-          const valorTotal = valordiaria * diffDays;
-          $('#campo-total-diarias').val(diffDays); // Total de dias
-          $('#campo-valor-total').val(valorTotal); // Preenche o campo valor total
-        } else {
-            
-            $('#erro-veiculo').show(); // Exibe a mensagem de erro
-
+    if (cpf) {
+      $.ajax({
+        url: '/buscar-cliente/' + cpf,
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          if (data) {
+            const nomeCliente = data.nome; // Nome do cliente retornado pelo servidor
+            $('#nome-cliente').val(nomeCliente); // Preenche o valor do campo de nome do cliente
+          } else {
+            $('#erro-cliente').show(); // Exibe a mensagem de erro
             
             // Limpa o campo após 3 segundos
             setTimeout(function() {
-                $('#campo-veiculo').val(''); // Limpa o campo de placa do veículo novamente
-                $('#erro-veiculo').hide(); // Oculta a mensagem de erro
+              $('#campo-cliente').val(''); // Limpa o campo cpf novamente
+              $('#erro-cliente').hide(); // Oculta a mensagem de erro
             }, 3000); // Tempo em milissegundos (3 segundos)
+          }
+        },
+        error: function(xhr, status, error) {
+          console.error(error);
         }
-      },
-      error: function(xhr, status, error) {
-        console.error(error);
-        
-      }
-    });
-  }
+      });
+    }
+  });
+
+  $('#botao-buscar-veiculo').click(function() {
+    const placa = $('#campo-veiculo').val();
+    
+    if (placa) {
+      $.ajax({
+        url: '/buscar-veiculo/' + placa,
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          if (data) {
+            const { marca, modelo, cor, renavam, valordiaria, alocado } = data; // Campos retornados pelo servidor
+            $('#campo-marca').val(marca); // Preenche o campo marca com o valor retornado
+            $('#campo-modelo').val(modelo); // Preenche o campo modelo com o valor retornado
+            $('#campo-cor').val(cor); // Preenche o campo cor com o valor retornado
+            $('#campo-renavam').val(renavam); // Preenche o campo renavam com o valor retornado
+            $('#campo-valor-diaria').val(valordiaria); // Preenche o campo valor da diária
+            
+            if (alocado) {
+              $('#mensagem-erro').show(); // Exibe a mensagem de veículo indisponivel
+              // Limpa o campo após 3 segundos
+            setTimeout(function() {
+              $('#campo-veiculo').val(''); // Limpa o campo de placa do veículo novamente
+             // $('#erro-veiculo').hide(); // Oculta a mensagem de erro
+              $('#mensagem-erro').hide(); // Oculta a mensagem de veículo alocado
+            }, 3000); // Tempo em milissegundos (3 segundos)
+            } else {
+              
+              
+              //CALCULA O VALOR TOTAL DA LOCAÇÃO
+              const dataInicio = $('[name="dataInicio"]').val();
+              const dataFim = $('[name="dataFim"]').val();
+              const diffTime = Math.abs(new Date(dataFim) - new Date(dataInicio));
+              const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+              const valorTotal = valordiaria * diffDays;
+              $('#campo-total-diarias').val(diffDays); // Total de dias
+              $('#campo-valor-total').val(valorTotal); // Preenche o campo valor total
+            }
+          } else {
+            $('#erro-veiculo').show(); // Exibe a mensagem de erro de veiculo inexistente
+           // Limpa o campo após 3 segundos
+            setTimeout(function() {
+              $('#campo-veiculo').val(''); // Limpa o campo de placa do veículo novamente
+              $('#erro-veiculo').hide(); // Oculta a mensagem de erro
+            }, 3000); // Tempo em milissegundos (3 segundos)
+          }
+        },
+        error: function(xhr, status, error) {
+          console.error(error);
+        }
+      });
+    }
+  });
 });
 
-
-  });
 </script>

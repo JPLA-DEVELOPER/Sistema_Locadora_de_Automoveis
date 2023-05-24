@@ -39,11 +39,15 @@ module.exports = class UsuarioController {
   }
 
   //
+  
+
   static async home(req, res) {
-    const id = req.session.id;
-    const usuarioLogado = await Usuario.findOne({ where: { id: id } });
-    res.render('home', { usuarioLogado });
+  
+    res.render('home');
   }
+
+  
+  
   
 
   static async allUsuario(req, res) {//allUsers, recupera todos os usuários do banco de dados usando o modelo User e os renderiza em uma view.
@@ -105,31 +109,7 @@ static async login_post(req, res){
 }
 
 
-static async processLogin(req, res) {
-  //const { email, senha } = req.body;
 
-  const email = req.body.email;
-  const senha = req.body.senha;
-
-  const usuario = await Usuario.findOne({ where: { email: email } });
-  if (usuario && usuario.senha === senha) {
-    req.session.loggedIn = true;
-    req.session.usuarioId = usuario.id; // Salvar o ID do usuário na sessão (opcional)
-    req.session.nomeUsuario = usuario.nome; // Armazena o nome do usuário na sessão
-
-    //const userId = req.session.userId;
-   // const usuarioLogado = await Usuario.findOne({ where: { id: userId } });
-    //res.render('home', { usuario: usuarioLogado });
-    //res.render('home', { usuario: nomeUsuario });
-
-    const nomeUsuario = req.session.nomeUsuario; // Obtém o nome do usuário da sessão
-    res.render('home', { nomeUsuario });
-    
- 
-  } else {
-    res.send('Credenciais inválidas!')
-  }
-}
 
 // LOGOUT
 static logout(req, res) {
