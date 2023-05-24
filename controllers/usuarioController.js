@@ -97,6 +97,7 @@ static async login_post(req, res){
     console.log("Usuario não encontrado")
     res.redirect('/')
   }else{
+    req.session.user = { email: email, senha: senha};
     console.log("Usuario encontrado")
     res.redirect('/home')
   }

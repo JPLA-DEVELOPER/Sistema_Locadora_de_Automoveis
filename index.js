@@ -6,22 +6,13 @@ const sequelize = require('./database/connection')
 
 //LOGIN -------------------------------------------------
 const session = require('express-session')//SESSÕES
-const flash = require('connect-flash') //SESSÕES
-const Usuario = require('./models/usuarioModel')
 
 ///SESSÃO
 app.use(session({
     secret: 'mySecretKey',
-    resave: true,
+    resave: false,
     saveUninitialized: true
   }));
-
-app.use(flash())
-
-//midlleware
-
-
-
 
 
 //------------------------------------------------------
